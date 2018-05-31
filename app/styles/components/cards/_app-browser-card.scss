@@ -1,0 +1,30 @@
+.app-browser-card {
+  .current-level-value {
+    a {
+       font-size: 13px;
+       color: $gray;
+       height: 36px;
+       line-height: 36px;
+       padding-left: 18px;
+       display: block;
+       text-transform: capitalize;
+       &:hover, &.active {
+         background-color: #d0eefb;
+       }
+    }
+  }
+  .framework-card {
+    .current-level-value {
+      margin: 0 18px;
+      display: flex;
+      .checkbox {
+        margin-top: 11px;
+      }
+      a {
+        &:hover, &.active {
+          background: none;
+        }
+      }
+    }
+  }
+}

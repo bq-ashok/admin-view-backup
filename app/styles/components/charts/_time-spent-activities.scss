@@ -1,0 +1,23 @@
+.time-spent-activities-chart {
+  width: 350px;
+  height: 330px;
+
+  .title {
+    text-transform: none;
+    font-weight: bold;
+    line-height: 6px;
+    width: 186px;
+    text-align: center;
+    font-size: 18px;
+    color: $dark-800;
+    text-transform: capitalize;
+  }
+
+  .duration-label {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    width: 195px;
+    color: $dark-800;
+  }
+}

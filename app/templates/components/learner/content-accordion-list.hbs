@@ -1,0 +1,44 @@
+<div class="accordion {{resourceType}}">
+  <div class="accordion-header">
+    <div class="title">
+      <span class="pull-down"{{action "onShowingContentAccordion" resourceType}}>
+        <span class="title-text">
+          {{resourceType}}
+        </span>
+        <span>
+          {{#if isExpanded}}
+            {{app-icon name="arrow_drop_up"}}
+          {{else}}
+            {{app-icon name="arrow_drop_down"}}
+          {{/if}}
+        </span>
+      </span>
+    </div>
+    <div class="statistics">
+      <div class="time">{{resourceTimeSpent}}</div>
+    </div>
+  </div>
+  <div class="accordion-body">
+    {{#if isLoading}}
+      {{three-bounce-spinner}}
+    {{else}}
+      <div class="accordion-list">
+        {{#each resourceData as |resource|}}
+          <div class="list-item">
+            <span class="{{resourceType}} {{if (gt resource.pathId 0) 'suggested'}}">
+              <i class="icon"></i>
+            </span>
+            <div class="title">
+              {{resource.resourceTitle}}
+            </div>
+            <div class="statistics">
+              <div class="time">
+                {{format-time resource.resourceTimeSpent}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</div>

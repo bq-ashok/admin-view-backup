@@ -1,0 +1,51 @@
+<div class="learners">
+  <div class="student-profiles">
+    {{learners.user-profile-pictures userProfiles=learnerUserProfiles onSelectUser="onSelectUser"}}
+  </div>
+  <div id="world-map">
+    {{#unless selectedSubject}}
+      {{charts.world-map locationDataCount=geoLocations keyName='total'}}
+      {{else}}
+        {{charts.world-map locationDataCount=geoLocationsBySubject keyName='active'}}
+    {{/unless}}
+  </div>
+  {{#unless selectedSubject}}
+    <div id="global-statistics">
+      {{learners.global-statistics subjects=subjects onSelectActiveUsers='onSelectActiveUsers'}}
+    </div>
+    {{else}}
+      <div id="active-user-list-container">
+        {{#app-panel-box title=selectedTitleSubjectHeader showBackButton=true onClickBackButton='onClickBackButton' }}
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>{{t 'common.username'}}</th>
+                <th>{{t 'learner.grade'}}</th>
+                <th>{{t 'learner.authority'}}</th>
+                <th>{{t 'learner.reputation'}}</th>
+                <th>{{t 'learner.citizenship'}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each activeUserDistrbutionBySubject as |user|}}
+                <tr {{action 'onSelectUser' user}}>
+                  <td>
+                    <div class="profile">
+                      <div class="img-container pull-left">
+                        <img class="img-responsive" src="{{user.thumbnail}}">
+                      </div>
+                      <span class="username pull-left">{{user.userDisplayName}}</span>
+                    </div>
+                  </td>
+                  <td>{{user.grade}}</td>
+                  <td>{{user.authority}}</td>
+                  <td>{{user.reputation}}</td>
+                  <td>{{user.citizenship}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        {{/app-panel-box}}
+      </div>
+  {{/unless}}
+</div>

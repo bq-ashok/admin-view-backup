@@ -1,0 +1,48 @@
+<div class="learning-map-container">
+  <div class="browser-container">
+    <div class="search-box-container">
+      {{learning-map.search-box onSearch="onSearch"}}
+    </div>
+    <div class="title">
+      <span>
+        {{
+          concat
+          (t 'common.category') ', '
+          (t 'common.subject') ', '
+          (t 'common.course') ', '
+          (t 'common.domain')
+        }}
+      </span>
+    </div>
+      <div class="body">
+        {{learning-map.app-domain-browser onSelectDomain="onSelectDomain" onSelectDataItem="onSelectDataItem"}}
+        <div class="generate-table-btn" align="center">
+          <button class="btn generate-btn {{unless isShowExportBtn 'disabled'}}" {{action "onExportCompetency"}}>{{t 'crosswalk.generate-table'}}</button>
+        </div>
+      </div>
+  </div>
+    <div class="table-container">
+      {{learning-map.competency-table
+        tableBody=tableBody
+        selectedDataLevelItems=selectedDataLevelItems
+        isLoading=isLoading
+        searchTerm=searchTerm
+        onToggleExportButton="onToggleExportButton"
+        onSelectContentType="onSelectContentType"
+      }}
+    </div>
+    {{#if isLoading}}
+      <div class="spinner">
+        {{three-bounce-spinner}}
+      </div>
+    {{/if}}
+
+    {{#app-pull-out showPullOut=showPullOut title=pullOutInfo.displayCode description=pullOutInfo.title showMore=pullOutShowMore as |section| }}
+      {{#if section.isLessContent}}
+        {{learning-map.pull-out-body
+          pullOutInfo=pullOutInfo
+        }} {{else if section.isMoreContent}}
+        {{learning-map.pull-out-more-content pullOutContents=pullOutContents pullOutInfo=pullOutInfo type=pullOutInfo.type onClickShowMoreResults="onClickShowMoreResults"}}
+      {{/if}}
+    {{/app-pull-out}}
+</div>

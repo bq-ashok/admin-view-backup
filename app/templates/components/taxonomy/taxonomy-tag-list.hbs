@@ -1,0 +1,18 @@
+{{#each visibleTags as |taxonomyTag|}}
+  {{taxonomy.taxonomy-tag model=taxonomyTag hasTooltip=hasTooltips onRemove=(action 'removeTag' taxonomyTag)}}
+{{/each}}
+
+{{#if nonVisibleTags}}
+  <button class="non-visible-tags">
+    <span>+{{nonVisibleTags}} More</span>
+  </button>
+  <div class="all-tags">
+    {{#each tags as |taxonomyTag|}}
+      {{taxonomy.taxonomy-tag
+      model=taxonomyTag
+      hasTooltip=false
+      onRemove=(action 'removeTag' taxonomyTag)
+      }}
+    {{/each}}
+  </div>
+{{/if}}

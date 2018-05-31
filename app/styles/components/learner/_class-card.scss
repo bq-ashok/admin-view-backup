@@ -1,0 +1,357 @@
+.learner.class-card {
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin: 0 15px 30px;
+
+  .panel {
+    @include border-top-radius(4px);
+    @include border-bottom-radius(4px);
+    @include box-shadow(0 0 7px #ddd);
+    margin: 0;
+    cursor: pointer;
+
+    .panel-heading {
+      background-color: $white;
+      @include flexbox;
+      width: 100%;
+      padding: 0 0 0 10px;
+      height: 40px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+      border-bottom: 1px solid $white;
+
+      > .title {
+        width: 85%;
+        padding: 6px 0;
+        color: $white;
+        margin: 0;
+        font-size: $font-size-h6;
+        font-weight: bold;
+        $line-height: 1.3;
+        $lines-to-show: 1;
+
+        .truncate {
+          @include ellipsis($font-size: $font-size-base, $line-height: $line-height, $lines-to-show: $lines-to-show, $excerpt-bg: $white);
+        }
+      }
+
+      .code {
+        border-left: 1px solid #fff;
+        text-align: center;
+        width: 30%;
+
+        .title {
+          opacity: 0.5;
+          font-weight: normal;
+        }
+
+        .class-code {
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 12px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 100%;
+        }
+      }
+    }
+
+    .no-percentage-header {
+      color: $dark-600;
+      @include flexbox;
+      width: 100%;
+      padding: 0 0 0 10px;
+      height: 40px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+      border-bottom: 1px solid $dark-600;
+      background: $white;
+
+      .title {
+        width: 85%;
+        padding: 6px 0;
+        color: $dark-600;
+        font-weight: normal;
+      }
+
+      .code {
+        border-left: 1px solid $dark-600;
+
+        div {
+          color: $dark-600;
+        }
+      }
+    }
+    // }
+    .panel-body {
+      padding: 0;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      height: 260px;
+
+      .information {
+        height: 167px;
+        width: 100%;
+        color: $white;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 103px 0 0;
+        font-weight: bold;
+        position: relative;
+
+        .current-activity {
+          position: absolute;
+          z-index: 10;
+          font-size: 12px;
+          padding: 0 10px;
+          font-weight: bold;
+        }
+
+        .title-section {
+          $line-height: 0.5;
+          $lines-to-show: 2;
+          margin: 23px 0 0;
+          padding: 0 10px;
+          position: absolute;
+          z-index: 10;
+          width: 100%;
+
+          .title {
+            // line-height: $font-size-base;
+            vertical-align: top;
+            display: inline-block;
+            width: 86%;
+            font-weight: bold;
+          }
+
+          .truncate {
+            @include ellipsis($font-size: $font-size-base, $line-height: $line-height, $lines-to-show: $lines-to-show, $excerpt-bg: $white);
+          }
+        }
+
+        &:after {
+          display: block;
+          position: absolute;
+          z-index: 9;
+          background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, $gray-base 100%);
+          margin-top: -19px;
+          height: 50%;
+          width: 100%;
+          content: "";
+        }
+      }
+
+      .links {
+        display: inline-block;
+        width: 148px;
+        height: 93px;
+        background-color: $white;
+        box-shadow: 1px -1px 4px 0 rgba(0, 0, 0, 0.5);
+        border-bottom-left-radius: 4px;
+
+        ul {
+          padding: 0;
+
+          li {
+            height: 33px;
+            display: block;
+            border-bottom: 1px solid $light-300;
+            text-align: left;
+            padding: 5px 0 0 10px;
+            list-style: none;
+
+            a {
+              font-size: $font-size-base;
+              color: $dark-400;
+            }
+
+            &:last-child {
+              border: none;
+              padding: 2px 0 0 10px;
+            }
+
+            .icon-performance {
+              margin-left: 42px;
+              padding: 11px 12px 0 0;
+              margin-bottom: -9px;
+
+              svg {
+                width: 55px;
+                height: 55px;
+                display: inline-block;
+              }
+            }
+
+            a {
+              span {
+                margin-left: 46px;
+                padding: -8px -4px 0 0;
+                width: 72px;
+                color: $gray-base;
+              }
+            }
+          }
+        }
+      }
+
+      .performance {
+        color: $white;
+        text-align: center;
+        padding: 0;
+        display: inline-block;
+        width: 129px;
+        height: 93px;
+        vertical-align: top;
+        border-bottom-right-radius: 4px;
+
+        .code {
+          .title {
+            height: 16px;
+            object-fit: contain;
+            opacity: 0.5;
+            font-family: Lato;
+            font-size: 13px;
+            font-weight: bold;
+          }
+
+          .class-code {
+            height: 16px;
+            object-fit: contain;
+            font-family: Lato;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+          }
+
+          .no-percentage-code {
+            color: $dark-700;
+          }
+        }
+
+        .percentage {
+          font-size: 50px;
+          line-height: 60px;
+          font-weight: 900;
+        }
+
+        label {
+          // font-size: $font-size-xxsmall;
+          font-weight: bold;
+        }
+      }
+
+      .no-performance {
+        text-align: center;
+        padding: 0;
+        display: inline-block;
+        width: 129px;
+        height: 93px;
+        vertical-align: top;
+        border-bottom-right-radius: 4px;
+        background: $white;
+
+        .code {
+          .title {
+            height: 16px;
+            object-fit: contain;
+            opacity: 0.5;
+            font-family: Lato;
+            font-size: 13px;
+            font-weight: bold;
+          }
+
+          .class-code {
+            height: 16px;
+            object-fit: contain;
+            font-family: Lato;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+          }
+        }
+
+        .no-percentage {
+          text-align: center;
+          width: 125px;
+          padding: 25px;
+          margin-left: 25px;
+
+          i {
+            background: url("images/learner-no-performance.svg");
+            width: 28px;
+            height: 6px;
+            object-fit: contain;
+            display: block;
+          }
+        }
+      }
+    }
+
+    &.no-course {
+      .panel-heading {
+        color: $dark-600;
+        border-bottom: 1px solid $dark-600;
+
+        .title {
+          a {
+            color: $dark-600;
+            font-weight: normal;
+          }
+        }
+
+        .code {
+          border-left: 1px solid $dark-600;
+
+          div {
+            color: $dark-600;
+          }
+        }
+      }
+
+      .panel-body {
+        .information {
+          background-image: url("images/course-default.png");
+
+          .no-course-assigned {
+            position: absolute;
+            margin-left: 12px;
+            bottom: 0;
+            color: $white;
+            z-index: 999;
+          }
+        }
+
+        .performance {
+          width: 129px;
+          height: 93px;
+          color: $light-400;
+
+          .percentage {
+            color: $light-200;
+          }
+
+          .no-percentage {
+            text-align: center;
+            width: 125px;
+            padding: 25px;
+            margin-left: 25px;
+
+            i {
+              background: url("images/learner-no-performance.svg");
+              width: 28px;
+              height: 6px;
+              object-fit: contain;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.class-card {
+  float: left;
+  margin: 0 10px 30px;
+}

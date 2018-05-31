@@ -1,0 +1,103 @@
+.learners {
+  height: calc(100vh - 63px);
+  width: 100%;
+
+  #world-map {
+    width: 960px;
+    height: 500px;
+    margin: 0 auto;
+  }
+
+  #global-statistics {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .containers {
+    width: 1000px;
+    margin: 0 auto;
+    background: white;
+    height: 50px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 7px 2px rgba(94, 94, 95, 0.2);
+    margin-top: 20px;
+    text-align: center;
+    padding: 12px;
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .search-text {
+      width: 500px;
+      float: left;
+      margin-top: -7px;
+
+      input.form-control {
+        box-shadow: none;
+      }
+    }
+
+    .actions {
+      width: 150px;
+      float: right;
+
+      .search {
+        background: transparent;
+        border: none;
+        color: #8c8c8c;
+        margin-left: 40px;
+        text-align: center;
+      }
+
+      .close {
+        color: #8c8c8c;
+        border-left: 1px solid #8c8c8c;
+        padding: 0 0 0 8px;
+      }
+    }
+  }
+
+  #active-user-list-container {
+    width: 1024px;
+    margin: 0 auto;
+
+    .panel-title {
+      span {
+        font-size: 20px;
+      }
+    }
+    margin-bottom: 50px;
+
+    .profile {
+      .img-container {
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 15px;
+      }
+
+      .username {
+        margin-left: 10px;
+        max-width: 170px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        margin-top: 5px;
+      }
+    }
+
+    .table-hover {
+      thead th {
+        font-style: italic;
+      }
+
+      tbody tr {
+        cursor: pointer;
+      }
+    }
+  }
+}

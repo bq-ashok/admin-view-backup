@@ -1,0 +1,16 @@
+<div class="activity">
+  <div class="wrapper">
+    {{activities.search-box selectedFilterItems=visibleFilterItems onChangeFilterItems="onChangeFilterItems" onSearch='onSearch' searchStatus='searchStatus' clearSearchText='clearSearchText' term=searchTerm onEmptyFilters="onEmptyFilters" curMenuItem=curMenuItem}}
+    <div class="filters pull-left">
+      <div class="filter-list">
+        {{activities.activities-filter toggleClearSearch=toggleClearSearch filterTypes=filterTypes onChangeFilterItems="onChangeFilterItems" clearFilter='clearFilter' isEmptyFilters=isEmptyFilters}}
+      </div>
+    </div>
+    <div class="activity-container pull-left">
+      {{activity.menu-navigation onMenuItemSelection='onMenuItemSelection'}}
+      <div class="content-container">
+        {{outlet}}
+      </div>
+    </div>
+  </div>
+</div>

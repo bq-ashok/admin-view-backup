@@ -1,0 +1,35 @@
+.app-subject-browser {
+  margin-left: calc(100% - 83%);
+  overflow: auto;
+  .subject-browser {
+    display: flex;
+    .level-title {
+      margin-left: 18px;
+      font-size: 13px;
+      font-weight: bold;
+      color: $gray;
+      .warning-text {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+    .second-level .level-data,
+    .third-level .level-data {
+      border-left: none;
+    }
+    .level-data {
+      min-width: 264px;
+      height: 343px;
+      overflow-y: auto;
+      border: solid 1px $dark-600;
+    }
+    .empty {
+      .level-title {
+        opacity: 0.3;
+      }
+      .level-data {
+        border-color: $light-200;
+      }
+    }
+  }
+}

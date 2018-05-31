@@ -1,0 +1,12 @@
+{{#if isTagAvailable}}
+  <div class="tag-label">
+    <span class="ellipsis">{{tag.label}}</span>
+    {{#unless (or (eq tag.type 'subject') (eq tag.type 'category'))}}
+    <span {{action "onRemoveFilter" tag}}>{{app-icon name="clear"}}</span>
+    {{/unless}}
+  </div>
+{{else}}
+  <div class="tag-label empty">
+    {{t 'activities.no-filters'}}
+  </div>
+{{/if}}

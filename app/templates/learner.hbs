@@ -1,0 +1,19 @@
+<div class="learner">
+  <div class="user-profile-container">
+    <div class="user-profile-box">
+      <div class="user-profile-back-arrow" {{action 'onClickBackButton'}}>
+        {{app-icon name="ic_arrow_back"}}
+      </div>
+    </div>
+    <div class="user-profile-info">
+      <div class="profile">
+        <span class="username pull-left">{{user.firstName}}</span>
+        <div class="img-container pull-left" {{action 'onClickProfileInfo'}}>
+          <img class="img-responsive" src="{{user.thumbnail}}">
+        </div>
+        <span class="username pull-left">{{user.lastName}}</span>
+      </div>
+    </div>
+  </div>
+  {{learner.time-period-filter onFilterSelection='onFilterSelection'}} {{outlet}}
+</div>

@@ -1,0 +1,56 @@
+<div class="card-panel-container">
+  <div class="card-panel-header" {{action "onShowPullOut" collection}} style="background-image: url({{collection.thumbnail}})">
+    <div class="info">
+      <div class="title">{{collection.title}}</div>
+    </div>
+  </div>
+  <div class="content-count-container">
+    <div class="question pull-left">
+      <i class="icon"></i>
+      <span>{{if collection.questionCount collection.questionCount 0}}</span>
+    </div>
+    <div class="resource pull-left">
+      <i class="icon"></i>
+      <span>{{if collection.resourceCount collection.resourceCount 0}}</span>
+    </div>
+  </div>
+  <div class="collection-info-container">
+    <div class="collection-user-info">
+      <div class="created-by">{{t (if collection.creator "common.created-by" "common.remixed-by")}}</div>
+      <div class="img-container pull-left">
+        <img class="img-responsive" src="{{profileUrl}}">
+      </div>
+      <div class="username">{{collection.owner.usernameDisplay}}</div>
+    </div>
+    <div class="collection-description">
+      {{safe-html collection.description}}
+    </div>
+    <div class="collection-standards ">
+      {{#if tags.length}}
+        {{taxonomy.taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true showDescription=true}}
+      {{/if}}
+    </div>
+
+  </div>
+  <div class="card-panel-footer">
+    <div class="buttons-container">
+      <div class="play-btn" {{action "onPlayCollection" collection.id}}>{{app-icon name="ic_play_arrow"}}</div>
+    </div>
+    <div class="collection-prefs-container">
+      <span class="left-arc"></span>
+      <span class="right-arc"></span>
+      <div class="collection-prefs relevance pull-left" style="background-color:rgba(0, 114, 188, {{collection.relevance}})">
+        <div class="count">{{collection.relevance}}</div>
+        <div class="title">{{t 'common.relevance'}}</div>
+      </div>
+      <div class="collection-prefs engagement pull-left" style="background-color:rgba(0, 114, 188, {{collection.engagement}})">
+        <div class="count">{{collection.engagement}}</div>
+        <div class="title">{{t 'common.engagement'}}</div>
+      </div>
+      <div class="collection-prefs efficacy pull-left" style="background-color:rgba(0, 114, 188, {{collection.efficacy}})">
+        <div class="count">{{collection.efficacy}}</div>
+        <div class="title">{{t 'common.efficacy'}}</div>
+      </div>
+    </div>
+  </div>
+</div>

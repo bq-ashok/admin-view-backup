@@ -1,0 +1,21 @@
+<ul class="competency-group">
+  {{#if isCompetency}}
+    {{#each taxonomySubjects as | subject |}}
+      <li class="list {{if (eq subject.subjectTitle  isSelectedSubject) 'subject-active' ''}}" {{action 'chooseSubject' subject }}>
+        <div class="competency-title" >
+          <span>{{subject.subjectTitle}} </span>
+        </div>
+        <div class="competency-badge"></div>
+      </li>
+    {{/each}}
+  {{else}}
+    {{#each journeyCourses as | course |}}
+      <li class="{{if (and (eq course.courseTitle  isSelectedCourse) (eq course.courseId  isSelectedCourseId) )'subject-active' ''}}">
+        <div class="competency-title" {{action 'chooseCourse' course }}>
+          <span>{{course.courseTitle}} </span>
+        </div>
+        <div class="competency-badge"></div>
+      </li>
+    {{/each}}
+  {{/if}}
+</ul>

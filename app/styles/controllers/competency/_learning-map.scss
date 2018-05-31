@@ -1,0 +1,65 @@
+.learning-map-container {
+  height: calc(100vh - 63px);
+  clear: both;
+  background-color: $white;
+  overflow: auto;
+
+  .app-pull-out {
+    top: 104px;
+    height: calc(100vh - 104px);
+  }
+
+  .browser-container {
+    .title {
+      font-size: 20px;
+      color: $gray;
+      font-weight: 300;
+      margin: auto;
+      width: 300px;
+      margin-bottom: 15px;
+      span {
+        text-transform: capitalize;
+      }
+    }
+    .body {
+      .generate-table-btn {
+        padding: 30px;
+
+        .generate-btn {
+          width: 160px;
+          height: 50px;
+          background-color: #1b72ba;
+          font-size: 15px;
+          font-weight: bold;
+          color: #ffffff;
+          text-transform: uppercase;
+
+          &.disabled {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+  .spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  /* width */
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $dark-100;
+    border-radius: 4px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $light-300;
+  }
+}
+.non-scrollable-margin {
+  overflow: hidden !important;
+  margin-right: 15px;
+}

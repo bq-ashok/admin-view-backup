@@ -1,0 +1,9 @@
+<div class="unit-header ellipsis" {{action "onToggle" unit.unit_id}}>
+  <span class="unit"><i class="icon"></i></span>
+  <span class="title ellipsis">{{concat 'Unit ' (plus-one index) ' : 'unit.title}}</span>
+</div>
+<div class="unit-body {{if isExpanded 'expanded' 'collapsed'}}">
+  {{#each lessons as |lesson|}}
+      {{activities.course-accordion-lesson lesson=lesson unit=unit courseId=courseId}}
+  {{/each}}
+</div>

@@ -1,0 +1,9 @@
+<div class="lesson-header ellipsis" {{action "onToggle" lesson.lesson_id}}>
+  <span class="lesson"><i class="icon"></i></span>
+  <span class="title ellipsis">{{lesson.title}}</span>
+</div>
+<div class="lesson-body {{if isExpanded 'expanded' 'collapsed'}}">
+  {{#each collections as |collection|}}
+      {{activities.course-accordion-collection unit=unit lesson=lesson courseId=courseId collection=collection}}
+  {{/each}}
+</div>

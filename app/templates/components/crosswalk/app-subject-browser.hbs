@@ -1,0 +1,38 @@
+<div class="col-sm-12 subject-browser">
+  <div class="first-level">
+    <div class="level-title">
+      {{t 'crosswalk.browser-level.category'}}
+    </div>
+    <div class="level-data">
+      {{cards.app-browser-card values=categories type="category" getSubjects="getSubjects"}}
+    </div>
+  </div>
+
+  <div class="second-level {{unless isShowSubjectLevel 'empty'}}">
+    <div class="level-title">
+      {{t 'crosswalk.browser-level.subject'}}
+    </div>
+    <div class="level-data">
+      {{#if isShowSubjectLevel}}
+        {{cards.app-browser-card values=subjects type="subject" getFrameworks="getFrameworks"}}
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="third-level {{unless isShowFrameworkLevel 'empty'}}">
+    {{#if isShowSubjectLevel}}
+      <div class="level-title">
+        {{t 'crosswalk.browser-level.framework'}}
+        {{#unless isShowWarning}}
+          <span class="text-warning warning-text">{{t 'crosswalk.framework.warning-text'}}</span>
+        {{/unless}}
+      </div>
+      <div class="level-data">
+        {{#if isShowFrameworkLevel}}
+          {{cards.app-browser-card values=frameworks type="framework" frameworkStack="frameworkStack"}}
+        {{/if}}
+      </div>
+    {{/if}}
+  </div>
+
+</div>

@@ -1,0 +1,71 @@
+<div>
+  <div class="header">
+    <div class="author-info">
+      <span class="created-by">  {{t "common.created-by" }} </span>
+      <img class="img-responsive thumbnail-img" src="{{course.owner.avatarUrl}}">
+      <span class="username">{{course.creator.username}}</span>
+      <span class="publish-date">on {{format-date course.createdDate 'MMMM DD, YYYY' true}}</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="course-info">
+      <div class="title">
+        {{course.title}}
+      </div>
+      <div class="description">
+        <div class="thumbnail-img">
+          <img class="img-responsive" src="{{course.thumbnailUrl}}"/>
+        </div>
+        <div class="content">
+          {{course.description}}
+        </div>
+      </div>
+    </div>
+
+    <div class="content-count">
+      {{#each contentCount as |content|}}
+        <div class="content-info" data-toggle="tooltip" data-html="true" data-placement="top" title="{{content.type}}">
+          <div class="{{content.type}}"><i class="icon"></i></div>
+          <div class="count">{{content.count}}</div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="taxonomy-info">
+      <div class="title">
+        {{t "activities.pull-out.taxonomy-title"}}
+      </div>
+      <div class="items">
+        {{#each course.taxonomySubject as |subject|}}
+          <div class="subject item-box">
+            <div class="ellipsis">{{subject}}</div>
+          </div>
+        {{else}}
+          <div class="subject item-box">
+            No Subject Available
+          </div>
+        {{/each}}
+        {{#each course.taxonomyCourse as |course|}}
+          <div class="course item-box">
+            <div class="ellipsis">{{course}}</div>
+          </div>
+        {{/each}}
+        {{#each course.taxonomyDomain as |domain|}}
+          <div class="domain item-box">
+            <div class="ellipsis">{{domain}}</div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="content-accordion">
+      <div class="content-title">
+        Content
+      </div>
+      <div class="content-list">
+        {{activities.course-accordion units=courseData.unit_summary courseId=courseData.id}}
+      </div>
+    </div>
+  </div>
+</div>

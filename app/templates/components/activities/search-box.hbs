@@ -1,0 +1,54 @@
+<div class="box-container">
+  <div class="applied-filters">
+    <div class="visible-filters">
+      {{#each visibleFilters as |filterData|}}
+        {{activities.search-filter-tag isTagAvailable=true tag=filterData onRemoveFilter="onRemoveFilter"}}
+        {{else}}
+          {{activities.search-filter-tag isTagAvailable=false}}
+      {{/each}}
+      {{#if (gt appliedFilterList.length 3)}}
+        <button class="non-visible-tags">
+          <span>+ {{invisibleFilterCount}} More</span>
+        </button>
+      {{/if}}
+    </div>
+    <div class="non-visible-filters">
+      {{#each appliedFilterList as |filterData|}}
+        {{activities.search-filter-tag isTagAvailable=true tag=filterData onRemoveFilter="onRemoveFilter"}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="search-form">
+    {{#if term}}
+      <span class="clear-icon" {{action 'clearSearchText'}}>{{app-icon name="clear"}}</span>
+    {{/if}}
+    <span class="search-icon">
+      {{app-icon name='search' }}
+    </span>
+
+
+    <form {{action "searchTerm" on="submit"}} class="form-inline">
+      <div class="form-group">
+        <div class="input-group validation {{if searchErrorMessage 'has-error'}}">
+          {{input type="text" class="form-control search-input"
+                  value=tempTerm
+                  spellcheck="true"
+                  focus-out="inputValueChange"
+                  id="searchId"
+                  placeholder="Search Gooru's catalog..."
+                }}
+          {{#if searchErrorMessage}}
+            <span class="error">
+                    {{t "common.search-error-message"}}
+                  </span>
+          {{/if}}
+          {{#if isInvalidSearchTerm}}
+            <span class="error">
+                    {{t "common.search-400-error-message"}}
+                  </span>
+          {{/if}}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

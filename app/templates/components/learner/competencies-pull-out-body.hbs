@@ -1,0 +1,24 @@
+<div class="learner-competency">
+  <div class="competency-text">
+    <span class="text">{{competency.status}}</span>
+    <span class="mastered-status">{{competency.statusMastered}}</span>
+
+    {{#if (eq competency.status 'mastered') }}
+    {{else}}
+      <span class="date">{{competency.date}}</span>
+    {{/if}}
+  </div>
+  <div class="icons">
+    <span class="{{competency.status}}"> <i> </i></span>
+  </div>
+</div>
+<div class="competency-description">
+  <div class="text">
+    <span> {{competency.competencyName}}</span>
+  </div>
+</div>
+<div class="competency-accordion">
+  {{#each collection as | collection |}}
+    {{learner.pull-out-accordion-collection collection=collection userId=userId}}
+  {{/each}}
+</div>

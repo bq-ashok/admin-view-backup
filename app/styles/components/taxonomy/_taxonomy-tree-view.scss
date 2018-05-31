@@ -1,0 +1,123 @@
+.taxonomy-tree-view {
+  margin-left: -200px;
+  width: calc(100% - 60px);
+  .node-no-child {
+    cursor: default !important;
+
+    &:hover {
+      box-shadow: 0 0 1px 2px rgba(74, 74, 74, 0.2) !important;
+    }
+  }
+
+  .node-label {
+    width: 91px;
+    height: 18px;
+    padding-left: 9px;
+    border-radius: 14px;
+    background-color: $white;
+    box-shadow: 0 0 1px 2px rgba(74, 74, 74, 0.2);
+    cursor: pointer;
+    display: flex;
+    &.disable-events {
+      pointer-events: none;
+    }
+
+    .loader {
+      margin-left: -14px;
+      margin-top: 4px;
+
+      img {
+        height: 18px;
+      }
+    }
+
+    &.selected,
+    &:hover {
+      box-shadow: 0 0 1px 2px rgba(0, 172, 233, 0.4);
+
+      .node-more-info {
+        color: $blue-800;
+
+        i {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .node-text {
+      font-size: 12px;
+      text-align: left;
+      color: $dark-800;
+      line-height: 16px;
+      margin-left: 8px;
+      margin-right: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      width: calc(100% - 30px);
+      float: left;
+      align-items: center;
+      display: flex;
+    }
+
+    .node-more-info {
+      width: 12px;
+      height: 12px;
+      float: left;
+
+      i {
+        font-size: 12px;
+        margin-left: -37px;
+        display: block;
+      }
+    }
+
+    &.node-2,
+    &.node-3,
+    &.node-4,
+    &.node-5,
+    &.node-6 {
+      .node-more-info {
+        margin-top: 13px;
+        margin-left: -3px;
+      }
+    }
+
+    &.node-1 {
+      .node-more-info {
+        visibility: hidden;
+      }
+    }
+    &.node-0 {
+      display: none;
+    }
+
+    &.node-1,
+    &.node-2,
+    &.node-3 {
+      width: 180px;
+      height: 38px;
+    }
+
+    &.node-4,
+    &.node-5,
+    &.node-6 {
+      width: 250px;
+      height: 38px;
+    }
+  }
+
+  path.link {
+    fill: none;
+    stroke: $light-600;
+    stroke-width: 1px;
+
+    &.selected {
+      stroke: $blue-800;
+      stroke-width: 1.5px;
+    }
+  }
+
+  path.link-1 {
+    display: none;
+  }
+}

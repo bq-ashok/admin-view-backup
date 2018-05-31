@@ -1,0 +1,55 @@
+.pull-out-body {
+  .header {
+    margin: 10px 0;
+    .id {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      color: $dark-700;
+      .data {
+        font-weight: normal;
+      }
+    }
+    .description {
+      font-size: 15px;
+      text-align: left;
+    }
+  }
+
+  .body {
+    .taxonomy-info {
+      margin-bottom: 30px;
+      .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: $dark-400;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        border-bottom: 2px dashed $light-300;
+      }
+      .items {
+        margin-top: 10px;
+        .item-box {
+          border-radius: 4px;
+          border: solid 1px $gray;
+          width: auto;
+          display: inline-block;
+          padding: 0 10px;
+          margin-right: 5px;
+          font-size: 16px;
+          margin-top: 8px;
+          max-width: 48%;
+        }
+        .subject,  {
+          background-color: $dark-400;
+          color: $white;
+        }
+        .course {
+          background-color: $dark-200;
+          color: $white;
+        }
+
+      }
+    }
+  }
+}

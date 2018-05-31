@@ -1,0 +1,51 @@
+.app-competency-info {
+  .prerequisites-competency-info {
+    z-index: 999;
+    opacity: 1;
+    display: flex;
+    position: absolute;
+    height: max-content;
+    width: 1221px;
+    background-color: $white;
+    box-shadow: 0 2px 7px 9px rgba(81, 79, 79, 0.5);
+
+    .competency-info {
+      padding: 8px;
+      display: flex;
+      font-size: 12px;
+      color: $dark-400;
+      width: 515px;
+      .competency-id {
+        min-width: 160px;
+        font-weight: bold;
+      }
+    }
+    .content-info {
+      width: 50px;
+      text-align: center;
+      color: $dark-400;
+      font-size: 15px;
+      vertical-align: middle;
+      background-color: $ultra-light-gray;
+    }
+    .prerequisites-info {
+      width: 182px !important;
+      .prerequisites-id {
+        color: $dark-400;
+        font-weight: bold;
+        font-size: 12px;
+        cursor: pointer;
+        margin-left: 8px;
+      }
+    }
+  }
+  .close-popup {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 24px;
+    opacity: 0.9;
+    float: right;
+    color: $dark-400;
+    cursor: pointer;
+  }
+}

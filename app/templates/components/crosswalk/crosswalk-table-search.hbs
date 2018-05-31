@@ -1,0 +1,112 @@
+<div class="crosswalk-table-search">
+  {{crosswalk.crosswalk-search-box onSearchCrosswalk="onSearchCrosswalk" selectedFramework=selectedFramework onBackToCrosswalk="onBackToCrosswalk"}}
+  <div class="body">
+    <div class="body-container">
+      <div class="crowalk-result">
+        {{#if isCrosswalkAvailable}}
+          {{#each matchingCrosswalkCodes as |crosswalkCode cardIndex|}}
+            <div class="crosswalk-card card-{{cardIndex}}" {{action "onSelectCrosswalk" crosswalkCode cardIndex}}>
+              <div class="code">
+                {{crosswalkCode.id}}
+              </div>
+              <div class="description">
+                {{crosswalkCode.title}}
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <div class="crosswalk-card unavailable">
+            {{t 'crosswalk.search.unavailable'}}
+          </div>
+        {{/if}}
+      </div>
+      {{#if isLoading}}
+        {{three-bounce-spinner}}
+      {{else}}
+        <div class="crosswalk-info">
+          {{#if isContentNotAvailable}}
+            {{no-result-found}}
+          {{/if}}
+          {{#if isShowStandardInfo}}
+            <div class="standard-info">
+              <div class="title">
+                {{t 'crosswalk.search.information'}}
+              </div>
+              <div class="gut-code">
+                {{t 'crosswalk.search.competency'}}: {{GUT}}
+              </div>
+              <div class="description">
+                {{description}}
+              </div>
+              <div class="content-count">
+                {{content-display-count contentCountData=contentCountData}}
+              </div>
+              <div class="signature-assessments">
+                {{signature-collections collections=signatureContents.assessments collectionType='assessment'}}
+              </div>
+              <div class="signature-collections">
+                {{signature-collections collections=signatureContents.collections collectionType='collection'}}
+              </div>
+              <div class="prerequisites">
+                {{prerequisites-list prerequisites=prerequisites}}
+              </div>
+            </div>
+          {{/if}}
+
+          <div class="content-info">
+            {{#if resourceContent}}
+              <div class="section-content resources col-sm-12">
+                <div class="section-title">{{t 'crosswalk.pull-out.section.resources'}}</div>
+                  {{#each resourceContent as |content|}}
+                    <div class="col-md-4 col-sm-12">
+                      {{activity.resource-card resource=content}}
+                    </div>
+                  {{/each}}
+              </div>
+            {{/if}}
+            {{#if questionContent}}
+              <div class="section-content questions col-sm-12">
+                <div class="section-title">{{t 'crosswalk.pull-out.section.questions'}}</div>
+                  {{#each questionContent as |content|}}
+                    <div class="col-md-4 col-sm-12">
+                      {{activity.question-card question=content}}
+                    </div>
+                  {{/each}}
+              </div>
+            {{/if}}
+            {{#if collectionContent}}
+              <div class="section-content collections col-sm-12">
+                <div class="section-title">{{t 'crosswalk.pull-out.section.collections'}}</div>
+                  {{#each collectionContent as |content|}}
+                    <div class="col-md-4 col-sm-12">
+                      {{activity.collection-card collection=content}}
+                    </div>
+                  {{/each}}
+              </div>
+            {{/if}}
+            {{#if assessmentContent}}
+              <div class="section-content assessments col-sm-12">
+                <div class="section-title">{{t 'crosswalk.pull-out.section.assessments'}}</div>
+                  {{#each assessmentContent as |content|}}
+                    <div class="col-md-4 col-sm-12">
+                      {{activity.assessment-card assessment=content}}
+                    </div>
+                  {{/each}}
+              </div>
+            {{/if}}
+            {{#if courseContent}}
+              <div class="section-content courses col-sm-12">
+                <div class="section-title">{{t 'crosswalk.pull-out.section.courses'}}</div>
+                  {{#each courseContent as |content|}}
+                    <div class="col-md-4 col-sm-12">
+                      {{activity.course-card course=content}}
+                    </div>
+                  {{/each}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

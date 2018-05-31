@@ -1,0 +1,22 @@
+<div class="pull-out-body">
+  <div class="header">
+    <div class="id">
+      GUT: <span class="data">{{pullOutInfo.id}}</span>
+    </div>
+    <div class="description">
+      {{pullOutInfo.title}}
+    </div>
+  </div>
+  <div class="body">
+    <div class="taxonomy-info">
+      <div class="title">
+        {{t "activities.pull-out.taxonomy-title"}}
+      </div>
+      <div class="items">
+        <div class="subject item-box"><div class="ellipsis">{{if pullOutInfo.subject pullOutInfo.subject 'No Subject Available'}}</div></div>
+        <div class="course item-box"><div class="ellipsis">{{if pullOutInfo.course pullOutInfo.course 'No Course Available'}}</div></div>
+        <div class="domain item-box"><div class="ellipsis">{{if pullOutInfo.domain pullOutInfo.domain 'No Domain Available'}}</div></div>
+      </div>
+    </div>
+  </div>
+</div>

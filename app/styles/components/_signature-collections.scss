@@ -1,0 +1,50 @@
+.signature-collection {
+  h6 {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    color: $dark-800;
+    height: 28px;
+    border-bottom: dashed 2px $dark-600;
+  }
+
+  .signature {
+    width: 100%;
+    height: inherit;
+    display: inline-block;
+    border-bottom: 1px solid $dark-600;
+
+    .image {
+      cursor: default;
+      display: flex;
+      @include justify-content(center);
+      @include align-items(center);
+      float: left;
+      line-height: 0;
+      border-bottom: 1px solid $dark-600;
+
+      .img-container {
+        width: 86px;
+        height: 56px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .collection-name {
+      color: $gray-29;
+      margin-left: 23px;
+      position: relative;
+      top: 10px;
+      left: 16px;
+      display: block;
+      text-align: left;
+      @include ellipsis($font-size: 13px, $line-height: 1, $lines-to-show: 2);
+    }
+  }
+}

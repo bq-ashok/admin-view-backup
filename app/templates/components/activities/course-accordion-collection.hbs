@@ -1,0 +1,12 @@
+<div class="collection-header ellipsis" {{action "onToggle" collection}}>
+  <span class="{{collection.format}}"> <i class="icon"></i></span>
+  <span class="title ellipsis">{{collection.title}}</span>
+</div>
+<div class="collection-body {{if isExpanded 'expanded' 'collapsed'}}">
+  {{#each collectionContents as |content|}}
+    <div class="content">
+      <span class="{{if isCollection content.content_subformat 'question'}}"><i class="icon"></i></span>
+      <span class="title ellipsis">{{safe-html content.title}}</span>
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,94 @@
+.competencies-journeys-list {
+  .competency-group {
+    list-style: none;
+    padding: 0 0 20px;
+    position: relative;
+    margin-top: -15px;
+
+    .list {
+      cursor: pointer;
+    }
+
+    li:nth-last-child(2) {
+      top: inherit;
+      bottom: 2px !important;
+    }
+
+    .subject-active {
+      .competency-title {
+        span {
+          font-size: 13px;
+          color: #37424b;
+          opacity: 1;
+          font-weight: bold;
+        }
+      }
+
+      .competency-badge {
+        width: 25px;
+        height: 25px;
+        right: 14px;
+        top: 22px;
+        background-color: #2ea9e9;
+        border: 1px solid #2ea9e9;
+      }
+    }
+  }
+
+  .competency-group:before {
+    top: 30px;
+    bottom: 28px;
+    position: absolute;
+    content: " ";
+    width: 1px;
+    background-color: #ccc;
+    right: 25px;
+  }
+
+  .competency-group > li,
+  .competency-group > li > .competency-title {
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  .competency-group > li:after,
+  .competency-group > li:before {
+    content: " ";
+    display: table;
+  }
+
+  .competency-group > li:after {
+    clear: both;
+  }
+
+  .competency-group > li > .competency-title {
+    text-align: right;
+    top: 19px;
+    padding: 4px 10px 8px 15px;
+    border-radius: 5px;
+    width: 80%;
+    cursor: pointer;
+
+    span {
+      opacity: 0.3;
+      line-height: normal;
+      text-align: right;
+      color: #37424b;
+    }
+  }
+
+  .competency-group > li > .competency-badge {
+    width: 10px;
+    height: 10px;
+    line-height: 36px;
+    font-size: 1.2em;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    background-color: #ccc;
+    z-index: 100;
+    border-radius: 50%;
+    border: 1px solid #d4d4d4;
+  }
+}

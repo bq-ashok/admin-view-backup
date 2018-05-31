@@ -1,0 +1,13 @@
+<div class="panel-tabs">
+  <ul class="competencies-header">
+    <li class="{{if isCompetency 'tab-active' ''}}" {{action 'competencyMatrixTabs' 'competency' }}>
+      <span> Competency  </span> </li>
+    <li class="{{if isJourney 'tab-active' ''}}" {{action 'competencyMatrixTabs' 'journey' }}>
+      <span>Journeys </span> </li>
+  </ul>
+  {{#if isCompetency}}
+    {{learner.competencies-journeys-list taxonomySubjects=taxonomySubjects isSelectedSubject=isSelectedSubject isCompetency=isCompetency selectedSubject='selectedSubject'}}
+  {{else}}
+    {{learner.competencies-journeys-list  journeyCourses=journeyCourses  isSelectedCourse=isSelectedCourse isSelectedCourseId=isSelectedCourseId isSelectedSubject=isSelectedSubject isJourney=isJourney selectedCourse='selectedCourse'}}
+  {{/if}}
+</div>

@@ -1,0 +1,8 @@
+<div class="learner-activities">
+  {{#app-panel-box localizeTitle="learner.activities.time-spent-activities" showBackButton="true" onClickBackButton="onClickBackButton"}}
+    {{charts.time-spent-activities-bar-chart data=learnerActivities}}
+    {{#each resourceTypes as |resourceType|}}
+      {{learner.content-accordion-list onShowingContentAccordion="onShowingContentAccordion" resourceType=resourceType userId=userId activeDuration=selectedActiveDuration}}
+    {{/each}}
+  {{/app-panel-box}}
+</div>

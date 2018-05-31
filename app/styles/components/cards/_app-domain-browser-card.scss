@@ -1,0 +1,32 @@
+.cards.app-domain-browser-card {
+  width: 264px;
+  height: 343px;
+  overflow: auto;
+  border: solid 1px $dark-600;
+  .browser-card {
+    .item {
+      font-size: 13px;
+      color: $gray;
+      height: 36px;
+      line-height: 36px;
+      padding-left: 18px;
+      display: block;
+      text-transform: capitalize;
+      cursor: pointer;
+      &:hover,
+      &.active {
+        background-color: #d0eefb;
+      }
+    }
+    &.domain {
+      .item {
+        background: none;
+        line-height: normal;
+        display: flex;
+        margin-top: 13px;
+        height: auto;
+        cursor: default;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<div class="taxonomy_subject">
+  <div class="row">
+    <ul class="nav nav-tabs" role="tablist">
+      {{#each menuItems as |item index|}}
+        <li role="presentation" class="{{if (eq index activeMenuIndex) "active"}}">
+          <a href="#{{item}}" aria-controls="{{item}}" role="tab" data-toggle="tab" {{action "onMenuItemSelection" item}}>{{item}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

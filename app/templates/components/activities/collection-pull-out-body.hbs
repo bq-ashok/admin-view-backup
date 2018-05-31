@@ -1,0 +1,79 @@
+<div>
+  <div class="header">
+    <div class="author-info">
+      <span class="created-by">  {{t "common.created-by" }} </span>
+      <img class="img-responsive thumbnail-img" src="{{collection.creator.avatarUrl}}">
+      <span class="username">{{collection.creator.username}}</span>
+      <span class="publish-date">on {{format-date collection.createdDate 'MMMM DD, YYYY' true}}</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="collection-info">
+      <div class="title">
+        {{collection.title}}
+      </div>
+      <div class="description">
+        <div class="thumbnail-img">
+          <img class="img-responsive" src="{{collection.thumbnailUrl}}"/>
+        </div>
+        <div class="content">
+          {{collection.description}}
+        </div>
+      </div>
+    </div>
+
+    <div class="taxonomy-info">
+      <div class="title">
+        {{t "activities.pull-out.taxonomy-title"}}
+      </div>
+      <div class="items">
+        {{#if collection.taxonomySet.subject}}
+          {{#each collection.taxonomySet.subject as |subject|}}
+            <div class="subject item-box">
+              <div class="ellipsis">{{subject}}</div>
+            </div>
+          {{/each}}
+          {{#each collection.taxonomySet.course as |course|}}
+            <div class="course item-box">
+              <div class="ellipsis">{{course}}</div>
+            </div>
+          {{/each}}
+        {{else}}
+          <div class="subject item-box">
+            No Subject Available
+          </div>
+        {{/if}}
+        {{#if collection.taxonomySet.domain}}
+          <div class="domain item-box">
+            {{#each collection.taxonomySet.domain as |domain|}}
+              <div class="ellipsis">{{domain}}</div>
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="content-info">
+      <div class="title">
+        {{t 'activities.pull-out.content'}}
+      </div>
+      <div class="items">
+        {{#each (or collectionData.content collectionData.question) as |content|}}
+          <div class="content-item ellipsis">
+            <div class="{{if (eq type 'assessment') 'question'}} {{if (eq content.content_format 'question') content.content_format content.content_subformat}}">
+              <i class="icon"> </i>
+            </div>
+            <span class="content-title">
+                {{safe-html content.title}}
+            </span>
+          </div>
+        {{else}}
+          <div class="no-content">
+            {{t 'activities.pull-out.no-content'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

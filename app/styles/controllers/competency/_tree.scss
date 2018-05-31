@@ -1,0 +1,20 @@
+.competency-container-tree {
+  height: calc(100vh - 63px);
+
+  .app-pull-out {
+    top: 63px;
+    height: calc(100vh - 63px);
+  }
+
+  .taxonomy {
+    width: 100%;
+    height: calc(100% - 45px);
+    overflow-y: auto;
+    .switch-view {
+      width: 140px;
+      margin-left: 30px;
+      position: absolute;
+      z-index: 9999;
+    }
+  }
+}

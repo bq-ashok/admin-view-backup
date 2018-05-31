@@ -1,0 +1,52 @@
+.popular-providers {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+
+  h6 {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    color: #4a4a4a;
+    height: 28px;
+    border-bottom: dashed 2px  $dark-600;
+  }
+
+  .profile {
+    width: 75px;
+    cursor: default;
+    display: block;
+    @include justify-content(center);
+    @include align-items(center);
+    float: left;
+    line-height: 1;
+    margin-bottom: 8px;
+
+    .img-container {
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 3px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .provider-name {
+      max-width: 75px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 75px;
+      height: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $gray-29;
+    }
+  }
+}

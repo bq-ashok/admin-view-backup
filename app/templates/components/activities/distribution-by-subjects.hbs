@@ -1,0 +1,28 @@
+{{#if isLoading}}
+  {{three-bounce-spinner}}
+{{else}}
+  <div class="subject-wise-distribution">
+    {{#each subjects as |subject|}}
+      <div class="subject-chart">
+        <div class="subject-name">
+          {{subject.name}}
+        </div>
+        <div class="subject-wise-chart">
+          {{charts.double-layer-donut-chart defaultI18nLabel='activities.learning-activities-available' width=350 height=350 radius=110 innerRadius=100 radius1=90 innerRadius1=80 data=subject.contentCounts}}
+        </div>
+        
+      </div>
+    {{/each}}
+  </div>
+
+  <ul class="subject-wise-distribution-legend">
+    {{#each contentLegends as |legend|}}
+      <li>
+        <div class="legend-container">
+          <div style="background-color:{{legend.colorCode}}" class="legend-icon"></div>
+          <div class="title">{{legend.name}}</div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

@@ -1,0 +1,12 @@
+{{#each prerequisites as | prerequest|}}
+  <div class="col-md-12 total">
+    <div class="left-node col-md-2">
+      <div class="standard-tags">
+        <span> {{prerequest.code}} </span>
+      </div>
+    </div>
+    <div class="col-md-10 right-node">
+      <span> {{prerequest.title}} </span>
+    </div>
+  </div>
+{{/each}}

@@ -1,0 +1,178 @@
+<div class="pull-out-more-content">
+  {{#if (eq type 'course')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.course-card course=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'collection')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.collection-card collection=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'signatureCollection')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{cards.signature-collection-card collection=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+
+  {{#if (eq type 'assessment')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.assessment-card assessment=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'signatureAssessment')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{cards.signature-collection-card collection=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'unit')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.unit-card unit=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'lesson')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.lesson-card lesson=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'resource')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.resource-card resource=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'question')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.question-card question=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if (eq type 'rubric')}}
+    <div class="content-section {{type}} col-sm-12">
+      <div class="section-title">{{t (concat 'common.content-types.' type)}}</div>
+      <div class="section-content">
+        {{#each contents as |content|}}
+          <div class="col-md-4 col-sm-12">
+            {{activity.question-card question=content}}
+          </div>
+        {{else}}
+          <div class="no-results">
+            {{t 'common.no-results'}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isShowMoreVisible}}
+    <div class="col-xs-12 show-more">
+      <span class="show-more-results" {{action 'onClickShowMoreResults'}}>{{t "common.show-more-results"}}</span>
+    </div>
+  {{/if}}
+</div>

@@ -1,0 +1,18 @@
+<div class="browser-container">
+  <div class="browser-level">
+    <span class="title">{{t 'common.category'}}</span>
+    {{cards.app-domain-browser-card dataContent=categories type='category' onSelectDataItem="onSelectDataItem"}}
+  </div>
+  <div class="browser-level">
+    <span class="title">{{t 'common.subject'}}</span>
+    {{cards.app-domain-browser-card dataContent=subjects type='subject' onSelectDataItem="onSelectDataItem"}}
+  </div>
+  <div class="browser-level">
+    <span class="title">{{t 'common.course'}}</span>
+    {{cards.app-domain-browser-card dataContent=courses type='course' onSelectDataItem="onSelectDataItem"}}
+  </div>
+  <div class="browser-level">
+    <span class="title">{{t 'common.domain'}}</span>
+    {{cards.app-domain-browser-card dataContent=domains type='domain' onSelectDataItem="onSelectDataItem" onSelectDomain="onSelectDomain"}}
+  </div>
+</div>

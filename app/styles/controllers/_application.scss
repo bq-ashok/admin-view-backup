@@ -1,0 +1,85 @@
+.route-activity,
+.route-competency,
+.route-learner {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  &.no-vertical-scroll {
+    overflow-y: hidden;
+  }
+}
+.route-competency_matrix {
+  background: $white;
+}
+
+.app-container {
+  height: 100vh;
+  padding-top: 63px;
+  padding-left: 0;
+  padding-right: 0;
+  @media (min-width: $screen-md) {
+    padding-top: 63px;
+  }
+
+  > .controller {
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-content(flex-start);
+    min-height: 100%;
+    @media (min-width: $screen-md) {
+      @include flex-direction(row);
+    }
+
+    > * {
+      width: 100%;
+    }
+
+    > .navigation {
+      @media (min-width: $screen-md) {
+        height: 100%;
+        width: 20%;
+      }
+      @include linear-gradient($blue-500, $blue-400);
+      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .50);
+
+      * {
+        background-color: transparent;
+      }
+    }
+
+    > .content {
+      @media (min-width: $screen-md) {
+        width: 80%;
+      }
+
+      &.full-screen {
+        width: 100%;
+      }
+    }
+
+    > .channel {
+      @media (min-width: $screen-md) {
+        width: 25%;
+      }
+      @include linear-gradient($blue-500, $blue-400);
+      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .50);
+
+      * {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.route-sign-in {
+  .app-header {
+    display: none;
+  }
+}
+
+.route-activity_resources,
+.route-learner {
+  .app-container {
+    overflow-y: auto;
+  }
+}

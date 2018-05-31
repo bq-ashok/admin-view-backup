@@ -1,0 +1,12 @@
+<div class="parent-bredkcrumb">{{breadcrumb}}</div>
+{{#if nodeDescription}}
+  <div class="standard-description">{{nodeDescription}}</div>
+{{/if}}
+{{#if isLoading}}
+  {{three-bounce-spinner}}
+{{else}}
+  {{content-display-count contentCountData=contentCountData}}
+  {{signature-collections collections=signatureContents.assessments collectionType='assessment'}}
+  {{signature-collections collections=signatureContents.collections collectionType='collection'}}
+
+{{/if}}

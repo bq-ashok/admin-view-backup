@@ -1,0 +1,21 @@
+.activities-filter {
+  background-color: $white;
+  margin-top: 20px;
+  height: auto;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
+  .title {
+    width: 235px;
+    color: $dark-200;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 2px dashed $dark-100;
+    padding: 17px 0 8px 12px;
+
+    span {
+      float: right;
+      cursor: pointer;
+    }
+  }
+}

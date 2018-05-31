@@ -1,0 +1,22 @@
+{{#if isLoading}}
+  {{three-bounce-spinner}}
+{{else}}
+  <div class="summary-content-distribution-by-resource pull-left">
+    {{charts.double-layer-donut-chart defaultI18nLabel='activities.resources-available' radius=140 innerRadius=120 radius1=110 innerRadius1=100 data=resources}}
+  </div>
+
+  <div class="summary-content-distribution-by-question pull-left">
+    {{charts.double-layer-donut-chart defaultI18nLabel='common.questions' radius=110 innerRadius=100 radius1=90 innerRadius1=80 data=questions}}
+  </div>
+  <div class="clear"></div>
+  <div class="culca-count">
+    <ul>
+      {{#each culcaCounts as |culca|}}
+        <li>
+          <i class="icon {{culca.name}}" title="{{culca.name}}" data-toggle="tooltip"></i>
+          <span>{{us-locale culca.value}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}

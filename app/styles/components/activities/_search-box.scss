@@ -1,0 +1,113 @@
+.search-box {
+  .box-container {
+    width: 1024px;
+    height: 48px;
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 20px;
+    border-image-source: linear-gradient(
+      to bottom,
+      #ffffff,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(255, 255, 255, 0)
+    );
+    border-image-slice: 1;
+    display: flex;
+
+    .applied-filters {
+      width: 246px;
+      display: flex;
+      border-right: 1px solid $dark-200;
+      margin: -1px 0;
+
+      .visible-filters {
+        display: flex;
+        flex-wrap: wrap;
+
+        .search-filter-tag {
+          .tag-label {
+            max-width: 90px;
+          }
+        }
+      }
+
+      .non-visible-tags {
+        border-radius: 4px;
+        background-color: $dark-400;
+        color: $white;
+        padding: 1px 5px 1px 2px;
+        font-size: 13px;
+        height: 18px;
+        line-height: 18px;
+        border: none;
+        margin-left: 10px;
+        margin-top: 2px;
+      }
+
+      .non-visible-filters {
+        display: none;
+      }
+
+      .popover {
+        .popover-content {
+          max-height: 200px;
+          overflow: auto;
+
+          .search-filter-tag {
+            margin-top: 5px;
+            margin-left: 0;
+
+            .tag-label {
+              text-overflow: inherit;
+              max-width: none;
+            }
+          }
+        }
+      }
+    }
+
+    .search-form {
+      width: calc(100% - 220px);
+
+      .input-group {
+        input {
+          margin-left: 17px;
+          height: 47px;
+          width: 670px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .search-icon {
+        float: right;
+        line-height: 60px;
+        margin-right: 15px;
+        font-size: 10px;
+        cursor: pointer;
+
+        i {
+          font-size: 20px;
+          color: $light-500;
+        }
+      }
+      .clear-icon {
+        float: right;
+        line-height: 60px;
+        margin-right: 15px;
+        font-size: 10px;
+        cursor: pointer;
+
+        i {
+          font-size: 20px;
+          color: $light-500;
+        }
+      }
+    }
+  }
+}

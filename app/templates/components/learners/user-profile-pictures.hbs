@@ -1,0 +1,11 @@
+<div class="arrow left-arrow" {{action "onClickArrow" 'left'}}>
+  {{app-icon name="keyboard_arrow_left"}}
+</div>
+<div class="display-pictures">
+    {{#each userProfiles as |user|}}
+      <img class="picture img-responsive"  data-toggle="tooltip" title="{{concat user.firstName ' ' user.lastName}}" src="{{user.thumbnail}}" {{action "onSelectUser" user}} />
+    {{/each}}
+</div>
+<div class="arrow right-arrow" {{action "onClickArrow" 'right'}}>
+  {{app-icon name="keyboard_arrow_right"}}
+</div>

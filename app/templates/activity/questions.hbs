@@ -1,0 +1,30 @@
+<div class="activity-questions">
+  {{#if isLoading}}
+    {{three-bounce-spinner}}
+  {{else}}
+    {{#if questions}}
+      <div class="question-cards">
+        {{#each questions as |question|}}
+          {{activity.question-card question=question getQuestionInfo='getQuestionInfo'}}
+        {{/each}}
+      </div>
+      {{#if isShowMoreVisible}}
+        <div class="col-xs-12 show-more">
+          <span class="show-more-results" {{action 'showMoreResults'}}>{{t "common.show-more-results"}}</span>
+        </div>
+      {{/if}}
+    {{else}}
+      {{no-result-found}}
+    {{/if}}
+
+  {{/if}}
+  {{#app-pull-out showPullOut=showPullOut title=question.title description=question.taxonomy.id showMore=showMore isLoading=isLoadingPullOut as |section|}}
+    {{#if (and section.isLessContent question.title)}}
+      {{activities.pull-out-body
+       collection=question
+       isLoading=isLoading
+       selectedItem=selectedQuestion
+     }} {{else if section.isMoreContent}} {{activities.pull-out-more-content groupData=groupData groupHeader=questionHeader type="resource"  usageStatistics=usageStatistics description=question.description}}
+    {{/if}}
+  {{/app-pull-out}}
+</div>

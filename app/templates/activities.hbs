@@ -1,0 +1,26 @@
+<div class="activities">
+  {{activities.search-box selectedFilterItems=selectedFilterItems onSearch='onSearch' clearSearchText='clearSearchText' onEmptyFilters="onEmptyFilters"}}
+  <div class="filters pull-left">
+    <div class="filter-list">
+      {{activities.activities-filter filterTypes=filterTypes onChangeFilterItems="onChangeFilterItems" toggleClearSearch=toggleClearSearch clearFilter='clearFilter' isEmptyFilters=isEmptyFilters}}
+    </div>
+  </div>
+  <div class="activities-summary pull-left">
+    <div class="content-distribution section">
+      <div class="header">
+        {{t 'activities.catalog-distribution'}}
+      </div>
+      <div class="body">
+        {{activities.distribution-by-content term=term appliedFilterList=appliedFilterList}}
+      </div>
+    </div>
+    <div class="content-distribution-by-subject section">
+      <div align="left" class="header">
+        {{t 'activities.distribution-by-subject'}}
+      </div>
+      <div class="body">
+        {{activities.distribution-by-subjects term=term appliedFilterList=appliedFilterList}}
+      </div>
+    </div>
+  </div>
+</div>

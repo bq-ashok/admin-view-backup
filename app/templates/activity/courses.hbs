@@ -1,0 +1,36 @@
+<div class="activity-courses">
+  {{#if isLoading}}
+    {{three-bounce-spinner}}
+  {{else}}
+    {{#if courses}}
+      <div class="loading-spinner">
+        {{#if isLoadingPullout}}
+          {{three-bounce-spinner}}
+        {{/if}}
+      </div>
+      <div class="course-cards">
+        {{#each courses as |course|}}
+          {{activity.course-card course=course onShowPullOut="onShowPullOut"}}
+        {{/each}}
+      </div>
+      {{#if isShowMoreVisible}}
+        <div class="col-xs-12 show-more">
+          <span class="show-more-results" {{action 'showMoreResults'}}>{{t "common.show-more-results"}}</span>
+        </div>
+      {{/if}}
+    {{else}}
+      {{no-result-found}}
+    {{/if}}
+    {{#app-pull-out showPullOut=showPullOut title=selectedCourse.title showMore=true as |section| }}
+      {{#if section.isLessContent}}
+        {{activities.course-pull-out-body course=selectedCourse courseData=coursePullOutData}}
+      {{else if section.isMoreContent}}
+        {{activities.course-pull-out-more-content
+          groupData=groupData
+          groupHeader=groupHeader
+          description=selectedCourse.description
+          standards=coursePullOutData.aggregated_taxonomy}}
+      {{/if}}
+    {{/app-pull-out}}
+  {{/if}}
+</div>

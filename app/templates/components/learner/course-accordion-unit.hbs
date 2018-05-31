@@ -1,0 +1,25 @@
+<div class="unit-content">
+  <div class="unit-header">
+    <div class="unit-icon"> <i> </i></div>
+    <div class="title">
+      <span class="title-text ellipsis" {{action "onClickUnitTitle" unit.unitId}}>
+        {{safe-html unit.unitTitle}}
+      </span>
+    </div>
+    <div class="unit-status">
+      <div class="score" style="color: {{colorStyle}};">{{concat unit.unitAsmtScore '%'}}</div>
+      <div class="time">{{timespent}}</div>
+    </div>
+  </div>
+  <div class="unit-body">
+    {{#if isLoading}}
+      {{three-bounce-spinner}}
+    {{else}}
+      <div class="lessons">
+        {{#each lessons as |lesson|}}
+            {{learner.course-accordion-lesson unitId=unit.unitId lesson=lesson userId=userId courseId=courseId classId=classId}}
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</div>

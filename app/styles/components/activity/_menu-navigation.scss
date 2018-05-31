@@ -1,0 +1,91 @@
+.activity-menu-navigation {
+
+  .nav-tabs {
+    &:after {
+      display: none;
+    }
+
+    > li > a {
+      border: none;
+      color: $gray-base;
+      font-size: 15px;
+      padding: 3px 16px;
+      outline: none;
+      text-transform: capitalize;
+      opacity: 0.2;
+      .icon {
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+        display: block;
+        float: left;
+        margin-right: 8px;
+        margin-top: 3px;
+        &.summary {
+          display: none;
+        }
+        &.courses {
+          background-image: url("../assets/images/course-icon.svg");
+        }
+
+        &.assessments {
+          background-image: url("../assets/images/assessment-icon.svg");
+        }
+
+        &.collections {
+          background-image: url("../assets/images/collection-icon.svg");
+        }
+
+        &.resources {
+          background-image: url("../assets/images/resource-icon.svg");
+        }
+
+        &.questions {
+          background-image: url("../assets/images/question-icon.svg");
+        }
+      }
+
+      &:focus {
+        border-width: 0;
+      }
+
+      &:hover {
+        border-width: 0;
+        border: none;
+        color: $gray-base !important;
+        background: transparent;
+        opacity: 0.8;
+      }
+
+      &::after {
+        content: "";
+        background: $gray;
+        height: 3px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -1px;
+        transition: all 250ms ease 0s;
+      }
+    }
+
+    li.active > a {
+      font-weight: bold;
+      border: none;
+      color: $gray-base !important;
+      background: transparent;
+      opacity: 1;
+      &::after {
+        transform: scale(1);
+        height: 3px;
+        background: $gray-base;
+      }
+    }
+
+    li:hover > a {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

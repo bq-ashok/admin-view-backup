@@ -1,0 +1,7 @@
+<div class="learner-courses">
+  {{#app-panel-box localizeTitle=currrentCourseName courseReport="true" showBackButton="true" onClickBackButton="onClickBackButton"}}
+    {{#each userPerformanceUnits as |unit|}}
+      {{learner.course-accordion-unit unit=unit courseId=courseId userId=userId classId=classId}}
+    {{/each}}
+  {{/app-panel-box}}
+</div>

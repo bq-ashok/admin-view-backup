@@ -1,0 +1,145 @@
+.course-accordion {
+  margin-top: 20px;
+  .course-accordion-unit {
+    width: 405px;
+    margin: 0;
+    .unit-header {
+      height: 50px;
+      max-width: 461px;
+      color: $blue-400;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      .icon {
+        margin-top: 5px;
+      }
+    }
+    .unit-body {
+      .course-accordion-lesson {
+        margin-left: 30px;
+        .lesson-header {
+          height: 50px;
+          color: $dark-800;
+          font-size: 15px;
+          font-weight: bold;
+          opacity: 0.8;
+          cursor: pointer;
+          display: flex;
+
+        }
+        .lesson-body {
+          .course-accordion-collection {
+            margin-left: 30px;
+            .collection-header {
+              display: flex;
+              height: 50px;
+              color: $dark-800;
+              font-size: 15px;
+              opacity: 0.6;
+              cursor: pointer;
+            }
+            .collection-body {
+              margin-left: 30px;
+              .content {
+                display: flex;
+                margin: 10px;
+                opacity: 0.6;
+                %content-icon-size {
+                  -webkit-background-size: 20px 20px;
+                  background-size: 20px 20px !important;
+                  height: 20px;
+                  width: 20px;
+                  display: block;
+
+                }
+                .video_resource i{
+                  background: url("../assets/images/video-resource-green.svg");
+                  @extend %content-icon-size;
+                }
+                .webpage_resource i {
+                  background: url("../assets/images/website-resource-green.svg");
+                  @extend %content-icon-size;
+                }
+                .interactive_resource i {
+                  background: url("../assets/images/interactive-resource-green.svg");
+                  @extend %content-icon-size;
+                }
+                .text_resource i {
+                  background: url("../assets/images/text-resource-green.svg");
+                  @extend %content-icon-size;
+                }
+                .audio_resource i {
+                  background: url("../assets/images/audio-resource-green.svg");
+                  @extend %content-icon-size;
+                }
+                .image_resource i {
+                  background: url("../assets/images/image-resource-green.svg");
+                  @extend %content-icon-size;
+                }
+                .question i {
+                  background: url("../assets/images/question-resource-green.svg");
+                  @extend %content-icon-size;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .assessment {
+    i {
+      background: url("images/assessment-icon.svg");
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+    }
+  }
+
+  .lesson {
+    min-height: 24px;
+    text-align: center;
+    vertical-align: middle;
+
+    i {
+      background: url("images/lesson-icon.svg");
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .unit {
+    i {
+      background: url("images/unit-icon.svg");
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .collection {
+    i {
+      background-image: url("images/collection-icon.svg");
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .title {
+    margin-left: 15px;
+  }
+  .icon {
+    margin-top: 2px;
+  }
+}

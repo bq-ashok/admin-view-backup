@@ -1,0 +1,30 @@
+<div class="search-box">
+  <div class="search-form">
+    <span class="search-icon">
+      {{app-icon name='search' }}
+    </span>
+  </div>
+  <form {{action "searchTerm" on="submit"}} class="form-inline">
+    <div class="form-group">
+      <div class="input-group validation {{if searchErrorMessage 'has-error'}}">
+        {{input type="text" class="form-control search-input"
+                value=tempTerm
+                spellcheck="true"
+                focus-out="inputValueChange"
+                id="searchId"
+                placeholder="Search a keyword"
+              }}
+        {{#if searchErrorMessage}}
+          <span class="error">
+                  {{t "common.search-error-message"}}
+                </span>
+        {{/if}}
+        {{#if isInvalidSearchTerm}}
+          <span class="error">
+                  {{t "common.search-400-error-message"}}
+                </span>
+        {{/if}}
+      </div>
+    </div>
+  </form>
+</div>

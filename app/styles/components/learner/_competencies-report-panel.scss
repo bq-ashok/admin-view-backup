@@ -1,0 +1,43 @@
+.competencies-report-panel {
+  .panel-tabs {
+    width: 240px;
+
+    .competencies-header {
+      width: 100%;
+      display: inline-block;
+      border-bottom: 1px solid #cccac6;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        width: 120px;
+        float: left;
+        cursor: pointer;
+        font-size: 20px;
+        text-align: center;
+        height: 55px;
+        padding: 10px;
+
+        span {
+          width: 61px;
+          opacity: 0.5;
+          font-size: 15px;
+          text-align: center;
+          color: #4a4a4a;
+        }
+      }
+
+      .tab-active {
+        border-bottom: 2px solid #0072bc;
+
+        span {
+          width: 117px;
+          font-size: 15px;
+          text-align: center;
+          opacity: 1;
+          color: #0072bc;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="browser-card {{type}}">
+  {{#if (eq type 'domain')}}
+    {{#each dataContent as |data|}}
+      <div class="item {{string-replace (if data.id data.id data.value)  '\.' '-' 'g'}}">
+        <input type="checkbox" class="checkbox"
+          name="domainCheckbox"
+          onclick={{action 'onSelectDomain' data.id}}
+          />
+        {{data.title}}
+      </div>
+    {{/each}}
+  {{else}}
+    {{#each dataContent as |data|}}
+      <div class="item {{string-replace (if data.id data.id data.value)  '\.' '-' 'g'}}" {{action "onSelectDataItem" type data}}>
+        {{if (eq type 'category') (t data.label) data.title}}
+      </div>
+    {{/each}}
+  {{/if}}
+</div>

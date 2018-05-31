@@ -1,0 +1,29 @@
+<div class="competency-container-crosswalk">
+  <div class="crosswalk-body">
+    {{#if isLoading}}
+      <div class="loading">
+        {{three-bounce-spinner}}
+      </div>
+    {{/if}}
+    <div class="crosswalk-browser-view {{if showSubjectBrowser 'visible' 'hidden'}}">
+      <div class="subect-browser">
+        <div class="section-title">
+          <span class="title">{{t 'crosswalk.browser-level.category'}}, </span>
+          <span class="title">{{t 'crosswalk.browser-level.subject'}}, </span>
+          <span class="title">{{t 'crosswalk.browser-level.framework'}}</span>
+        </div>
+        {{crosswalk.app-subject-browser frameworkStack="frameworkStack" disableGenerateBtn="disableGenerateBtn" isShowWarning=enableGenerateTableBtn categoryId=categoryId}}
+      </div>
+      <div class="generate-table-btn" align="center">
+        <button class="btn generate-btn {{unless enableGenerateTableBtn 'disabled'}}" {{action "generateCrosswalkTable"}}>{{t 'crosswalk.generate-table'}}</button>
+      </div>
+    </div>
+    <div class="crosswalk-table-view">
+      {{#if showCrosswalkTable}}
+        <div class="crosswalk-table">
+          {{crosswalk.app-crosswalk-table categoryId=categoryId subjectTitle=subjectTitle tableData=tableData onToggleSubjectBrowser="onToggleSubjectBrowser" isShowTableSearch=false}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

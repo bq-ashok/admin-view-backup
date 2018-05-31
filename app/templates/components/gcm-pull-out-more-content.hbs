@@ -1,0 +1,107 @@
+<div>
+  <div class="body">
+    <div class="section pre-requisites">
+
+      <div class="section-content prerequisites col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.prerequisites'}}</div>
+        {{gcm-pull-out-more-prerequisites prerequisites=prerequisites}}
+      </div>
+
+      <div class="section-content courses col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.courses'}}</div>
+        <div class="content-body">
+          {{#each courseContent as |course|}}
+            <div class="col-md-4 col-sm-12">
+              {{activity.course-card course=course }}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="section-content units col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.units'}}</div>
+        <div class="content-body">
+          {{#each unitContent as | unit|}}
+            <div class="col-md-4 col-sm-12">
+              {{activity.unit-card unit=unit  }}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="section-content lessons col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.lessons'}}</div>
+        <div class="content-body">
+          {{#each lessonContent as |lesson|}}
+            <div class="col-md-4 col-sm-12">
+              {{activity.lesson-card lesson=lesson }}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="section-content assessment col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.assessments'}}</div>
+        <div class="content-body">
+          {{#each assessmentContent as |assessment|}}
+            <div class="col-md-4 col-sm-12">
+              {{activity.assessment-card assessment=assessment  }}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="section-content collections col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.collections'}}</div>
+        <div class="content-body">
+          {{#each collectionContent as |collection|}}
+            <div class="col-md-4 col-sm-12">
+              {{activity.collection-card collection=collection }} </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="section-content resources col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.resources'}}</div>
+        <div class="content-body">
+          {{#each resourceContent as |resource|}}
+            <div class="col-md-4 col-sm-12">
+              {{activity.resource-card resource=resource }}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="section-content questions col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.questions'}}</div>
+        <div class="content-body">
+          {{#each questionContent as |question|}}
+            <div class="col-md-4 col-sm-12">
+              {{activity.question-card question=question }}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <!-- <div class="section-content learner-summary col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.learnerSummary'}}</div>
+        {{learners-summary}}
+      </div> -->
+
+      <!-- <div class="section-content student-mastery col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.studentsMastery'}}</div>
+        <div class="col-md-12">
+          {{students-mastery}}
+        </div>
+      </div> -->
+
+      <!-- <div class="section-content performance-distribution col-sm-12">
+        <div class="section-title">{{t 'gcm.pull-out.section.performanceDistribution'}}</div>
+        <div class="col-md-12">
+          {{performance-distribution}}
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>

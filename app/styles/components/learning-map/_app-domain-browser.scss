@@ -1,0 +1,15 @@
+.learning-map.app-domain-browser {
+  .browser-container {
+    display: flex;
+    width: 1024px;
+    margin: 0 auto;
+    .browser-level {
+      .title {
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-left: 19px;
+      }
+    }
+  }
+}

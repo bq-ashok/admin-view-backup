@@ -1,0 +1,153 @@
+.pull-out.collection-pull-out-body {
+  .header {
+    margin-top: 23px;
+    margin-bottom: 34px;
+    .author-info {
+      display: flex;
+      .created-by, .username, .publish-date {
+        font-size: 13px;
+        line-height: 1.69;
+        margin-right: 8px;
+      }
+      .created-by, .publish-date {
+        color: $gray;
+        font-style: italic;
+      }
+      .thumbnail-img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+      .username {
+        font-weight: 600;
+        color: $blue-400;
+      }
+    }
+  }
+
+  .body {
+    .collection-info {
+      margin-bottom: 50px;
+      .title {
+        font-size: 15px;
+        color: $dark-800;
+      }
+      .description {
+        display: flex;
+        margin-top: 8px;
+        .thumbnail-img {
+          width: 139px;
+          height: 87px;
+          object-fit: contain;
+          margin-right: 10px;
+        }
+        .content {
+          width: calc(100% - 139px);
+          margin-top: -10px;
+          font-size: 15px;
+          color: $dark-800;
+        }
+      }
+    }
+
+    .taxonomy-info {
+      .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: $dark-400;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        border-bottom: 2px dashed $light-300;
+      }
+      .items {
+        margin-top: 10px;
+        .item-box {
+          border-radius: 4px;
+          border: solid 1px $gray;
+          width: auto;
+          display: inline-block;
+          padding: 0 10px;
+          margin-right: 5px;
+          font-size: 16px;
+          margin-top: 8px;
+          max-width: 48%;
+        }
+        .subject,  {
+          background-color: $dark-400;
+          color: $white;
+        }
+        .course {
+          background-color: $dark-200;
+          color: $white;
+        }
+
+      }
+    }
+
+    .content-info {
+      margin-top: 40px;
+      margin-bottom: 30px;
+      .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: $dark-400;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+      }
+      .items {
+        .content-item {
+          display: flex;
+          height: 30px;
+          padding: 15px 0 35px 0;
+          border-bottom: 2px solid $light-200;
+
+          .content-title {
+            color: $blue-400;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: -2px;
+          }
+
+          %content-icon-size {
+            -webkit-background-size: 22px 22px;
+            background-size: 22px 22px !important;
+            height: 22px;
+            width: 22px;
+            display: block;
+            margin-right: 10px;
+          }
+          .video_resource i{
+            background: url("images/video-resource-green.svg");
+            @extend %content-icon-size;
+          }
+          .webpage_resource i{
+            background: url("images/website-resource-green.svg");
+            @extend %content-icon-size;
+          }
+          .interactive_resource i {
+            background: url("images/interactive-resource-green.svg");
+            @extend %content-icon-size;
+          }
+          .question i {
+            background: url("images/question-resource-green.svg");
+            @extend %content-icon-size;
+          }
+          .image_resource i {
+            background: url("images/image-resource-green.svg");
+            @extend %content-icon-size;
+          }
+          .text_resource i {
+            background: url("images/text-resource-green.svg");
+            @extend %content-icon-size;
+          }
+          .audio_resource i {
+            background: url("images/audio-resource-green.svg");
+            @extend %content-icon-size;
+          }
+        }
+      }
+    }
+  }
+
+}

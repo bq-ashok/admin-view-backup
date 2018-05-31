@@ -1,0 +1,31 @@
+.slider-chart {
+  #slider-drag {
+    fill: #fff;
+    stroke: #4a8cdb;
+    stroke-width: 2;
+  }
+
+  #slider-end {
+    fill: #4a8cdb;
+    stroke: #4a8cdb;
+    stroke-width: 2;
+  }
+
+  #slider-line-end {
+    stroke: #4a8cdb;
+    stroke-width: 2;
+    stroke-opacity: 0.6;
+  }
+
+  #slider-start {
+    fill: #db4a4a;
+    stroke: #db4a4a;
+    stroke-width: 2;
+  }
+
+  #slider-line-start {
+    stroke: #db4a4a;
+    stroke-width: 2;
+    stroke-opacity: 0.6;
+  }
+}

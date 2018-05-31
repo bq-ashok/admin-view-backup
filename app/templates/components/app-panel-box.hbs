@@ -1,0 +1,24 @@
+<div class="panel-header">
+  {{#if showBackButton}}
+    <div class="pull-left panel-back-arrow" {{action 'onClickBackButton'}}>
+      {{app-icon name="ic_arrow_back"}}
+    </div>
+  {{/if}}
+  {{#if title}}
+    <div class="pull-left panel-title">
+      <span>{{title}}</span>
+    </div>
+  {{/if}}
+  {{#if localizeTitle }}
+    <div class="pull-left panel-title">
+      {{#if courseReport}}
+        <span>{{localizeTitle}}</span>
+      {{else}}
+        <span>{{t localizeTitle}}</span>
+      {{/if}}
+    </div>
+  {{/if}}
+</div>
+<div class="panel-body">
+  {{yield}}
+</div>

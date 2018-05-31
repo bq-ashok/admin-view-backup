@@ -1,0 +1,21 @@
+<div class="filter {{filterType.code}}">
+  <div class="header">
+    <div class="name">
+      {{t filterType.title}} {{if (gt filterCount 0) (concat '(' filterCount ')')}}
+    </div>
+    <div class="toggle-dropdown" {{action "onToggleExpandedView" filterType.code}}>
+      {{#if isExpanded}}
+        {{app-icon name="arrow_drop_up"}}
+      {{else}}
+        {{app-icon name="arrow_drop_down"}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="body {{if isExpanded 'expanded' 'collapsed'}}">
+    {{#each filterList as |filterInfo|}}
+      <div class="filter-name">
+        <div class="{{string-replace (if filterInfo.id filterInfo.id filterInfo.code)  '\.' '-' 'g'}}">{{input class="check-filter" checked=filterInfo.checked type="checkbox" change=(action 'onClickCheckbox' filterInfo filterType.code)}}<span class="checkmark"></span></div>{{filterInfo.label}}
+      </div>
+    {{/each}}
+  </div>
+</div>

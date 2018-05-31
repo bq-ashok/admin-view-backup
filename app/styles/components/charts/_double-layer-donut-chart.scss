@@ -1,0 +1,30 @@
+.double-layer-donut-chart {
+  width: 400px;
+  height: 350px;
+  margin-top: 30px;
+
+  .title {
+    font-size: 15px;
+    color: $dark-800;
+    font-weight: bold;
+    width: 75px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .header-count {
+    font-size: 40px;
+    font-weight: 300;
+    color: $dark-800;
+    text-align: center;
+    line-height: 1;
+  }
+  .header-title {
+    font-size: 18px;
+    font-weight: 300;
+    color: $dark-800;
+    text-align: center;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+}

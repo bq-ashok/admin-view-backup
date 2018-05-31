@@ -1,0 +1,16 @@
+.pull-out-content {
+  .parent-bredkcrumb {
+    font-weight: bold;
+    text-align: left;
+    color: $dark-800;
+    margin: 10px 0 10px 0;
+    @include ellipsis($font-size: 15px, $line-height: 1.5, $lines-to-show: 2, $excerpt-bg: $white);
+  }
+  .standard-description {
+    text-align: left;
+    color: $dark-800;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

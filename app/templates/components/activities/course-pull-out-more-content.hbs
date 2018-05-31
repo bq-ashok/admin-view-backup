@@ -1,0 +1,48 @@
+<header class="more-pull-out-header">
+  <div class="header-content">
+    {{#each groupHeader as | header |}}
+      <div {{action 'onheaderClick'  header}} class="title {{if header.isEnabled 'enable'  'disable'}}">
+        <div class="oval {{header.header}}"> </div>
+        <span> {{header.header}} </span>
+      </div>
+    {{/each}}
+  </div>
+</header>
+
+<div class="body">
+  <div class="col-md-12 header-property">
+    {{#each selectedDatas as | parentHeader |}}
+      <div class="col-md-6 headergroup {{if (eq parentHeader.length 0) 'hide'}}">
+        <span class="header-title"> {{parentHeader.key}} </span>
+        {{#each parentHeader.value as | keysValue |}}
+          <div class="col-md-12 ">
+            <span class="col-md-6 header-lable" style=" color : {{keysValue.color}}">{{keysValue.key}} :  </span>
+            {{#if keysValue.value}}
+              <span class="col-md-6  header-value {{keysValue.key}}">
+                <span class="text">{{safe-html keysValue.value}}</span>
+                {{#if (eq keysValue.key 'description')}}
+                  <span class="show-more" {{action "onShowMore" description}}>{{if isShowMore 'More' 'Less'}}</span>
+                {{/if}}
+                {{#if (eq keysValue.key 'Standards')}}
+                  <div class="popover-standards">
+                    {{#each visibleStandards as |standard|}}
+                      <span class="standard-id">{{standard}}</span>
+                    {{/each}}
+                  </div>
+                  {{#if (gt standards.length 5)}}
+                    <div class="toggle-show" {{action "onClickShowMoreStandards"}}>
+                      {{if isShowAllStandards (t 'common.show-less') (concat '+' nonVisbibleStandards ' More')}}
+                    </div>
+                  {{/if}}
+                {{/if}}
+              </span>
+            {{else}}
+              <span class="col-md-6  header-no-value"> __ </span>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+
+</div>

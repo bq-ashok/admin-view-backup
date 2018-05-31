@@ -1,0 +1,26 @@
+.input-box {
+  box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  height: 50px;
+  display: flex;
+  .search-icon {
+    float: right;
+    line-height: 5;
+    margin-right: 30px;
+  }
+  input {
+    height: 50px;
+    margin-left: 30px;
+    &::-webkit-input-placeholder {
+      font-style: italic;
+      font-size: 15px;
+    }
+  }
+  .back-icon {
+    padding-left: 10px;
+    i {
+      font-size: 25px;
+    }
+    cursor: pointer;
+    line-height: 5;
+  }
+}

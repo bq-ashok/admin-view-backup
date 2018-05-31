@@ -1,0 +1,427 @@
+.competencies-report {
+  width: inherit;
+  height: inherit;
+  border-radius: 4px;
+  padding-top: 20px;
+  margin-bottom: 100px;
+  display: flex;
+
+  .left-panel {
+    width: 716px;
+    border-radius: 4px;
+    background-color: $white;
+    box-shadow: 2px -1px 4px 0 rgba(0, 0, 0, 0.1);
+    margin-right: 75px;
+    position: relative;
+    //TODO quick fix for toggle matrix view
+    .header {
+      display: flex;
+      height: 47px;
+      padding: 5px;
+      margin-top: 10px;
+
+      .nav-header {
+        .competencies-header {
+          display: flex;
+
+          div {
+            padding-right: 10px;
+            color: $dark-400;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .domain-header {
+      border-bottom: 1px solid #cccccc;
+    }
+
+    .panel-header {
+      display: flex;
+      width: 50%;
+      float: left;
+      margin-left: 20px;
+
+      .panel-title {
+        margin: 0;
+
+        .subject-title {
+          width: 164px;
+          font-size: 20px;
+          line-height: normal;
+          text-align: left;
+          color: #4a4a4a;
+          line-height: 18px;
+        }
+      }
+
+      .panel-back-arrow {
+        cursor: pointer;
+
+        i {
+          margin-left: -80px;
+        }
+      }
+    }
+
+    .course-list-view {
+      width: 100%;
+    }
+
+    .skyline {
+      width: 38%;
+      display: flex;
+
+      .text {
+        width: 45%;
+        font-size: 16px;
+        color: #b3b3be;
+      }
+    }
+
+    .chart-reset-button {
+      width: 60%;
+      display: flex;
+
+      .text {
+        width: 53%;
+        font-size: 16px;
+        color: #b3b3be;
+      }
+    }
+
+    .nav-header {
+      z-index: 9;
+
+      .competencies-matric-header {
+        .competencies-header {
+          .course-section,
+          .domain-section,
+          .list-section {
+            width: 67px;
+            text-align: center;
+            color: #b3b3b3;
+          }
+
+          .courseActive,
+          .domainActive,
+          .listActive {
+            color: #000000 !important;
+          }
+        }
+      }
+    }
+
+    .body {
+      padding: 20px;
+
+      .calendar {
+        width: 100%;
+        height: 50px;
+        text-align: -webkit-center;
+        margin: auto 0;
+        display: inline-block;
+
+        i {
+          background: url("images/competencies-calendar.svg");
+          width: 34px;
+          height: 38px;
+          object-fit: contain;
+          opacity: 0.2;
+          display: block;
+        }
+
+        span {
+          width: 103px;
+          height: 20px;
+          opacity: 0.2;
+          font-size: 15px;
+          font-weight: bold;
+          line-height: normal;
+          text-align: center;
+          color: #4a4a4a;
+        }
+      }
+
+      .competencies-list-view {
+        width: 5%;
+        float: left;
+        padding: 6px;
+        cursor: grab;
+
+        i {
+          background: url("images/competencies-list-view.svg");
+          width: 17px;
+          height: 14px;
+          object-fit: contain;
+          cursor: pointer;
+          display: block;
+
+          &.active {
+            background: url("images/competencies-list-view-active.svg");
+          }
+        }
+      }
+
+      .competencies-module-view {
+        width: 10%;
+        padding: 6px;
+        cursor: grab;
+
+        i {
+          background: url("images/competencies-module-view.svg");
+          width: 17px;
+          height: 13px;
+          cursor: pointer;
+          object-fit: contain;
+          display: block;
+
+          &.active {
+            background: url("images/competencies-module-view-active.svg");
+          }
+        }
+      }
+
+      .report-panel {
+        .report-panel-body {
+          .competencies-chart {
+            width: 270px;
+            height: 270px;
+            margin: 50px auto 0;
+          }
+        }
+
+        .summary-accordion {
+          margin-top: 50px;
+        }
+      }
+    }
+
+    .time-spent-activities {
+      width: 330px;
+      float: left;
+      text-align: center;
+      margin-top: 25px;
+
+      span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 15px;
+        color: #4a4a4a;
+      }
+
+      .report-panel-body {
+        .explore-button {
+          display: inline-block;
+        }
+      }
+    }
+
+    .time-spent-courses {
+      width: 330px;
+      float: left;
+      text-align: center;
+      margin-top: 25px;
+      display: inline-block;
+
+      span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 15px;
+        color: #4a4a4a;
+      }
+
+      .report-panel-body {
+        .explore-button {
+          display: inline-block;
+        }
+      }
+    }
+
+    .courses-independent-journey {
+      width: 100%;
+      height: auto;
+      display: inline-block;
+      text-align: center;
+      margin-top: 50px;
+
+      span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 15px;
+        text-align: center;
+        color: #4a4a4a;
+      }
+
+      .report-panel-body {
+        margin-top: 40px;
+
+        .courses-independent-journeys-chart {
+          width: 100%;
+          height: 300px;
+        }
+
+        .explore-button {
+          display: inline-block;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .app-panel-box {
+      box-shadow: none;
+      padding: 20px 20px 20 10px !important;
+
+      .panel-header {
+        width: 100%;
+
+        .panel-back-arrow {
+          margin-top: -5px;
+        }
+      }
+
+      .panel-body {
+        .course-accordion-unit {
+          width: 100%;
+
+          .unit-content {
+            .unit-header {
+              .title {
+                width: 65%;
+              }
+
+              .unit-status {
+                width: 35%;
+              }
+            }
+          }
+
+          .unit-body {
+            .lessons {
+              .course-accordion-lesson {
+                .lesson-content {
+                  .lesson-header {
+                    .title {
+                      width: 45%;
+                      display: inherit;
+
+                      .title-text {
+                        width: 475px;
+                      }
+                    }
+
+                    .lesson-status {
+                      width: calc(100% - 45%);
+
+                      .score {
+                        width: 56%;
+                        margin-top: 11px;
+                      }
+                    }
+                  }
+                }
+
+                .lesson-body {
+                  .collections {
+                    .course-accordion-collection {
+                      .collection-content {
+                        .collection-header {
+                          .collection-info {
+                            .title {
+                              width: 67.2%;
+                            }
+
+                            .collection-status {
+                              width: calc(100% - 65.2%);
+                            }
+                          }
+                        }
+
+                        .collection-body {
+                          .resource-content {
+                            .resource-header {
+                              margin-right: 20px;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .left-panel-nav-1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      display: block;
+      z-index: -1;
+      top: 20px;
+      box-shadow: 2px -1px 4px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      left: 20px;
+      opacity: 0.9;
+    }
+
+    .left-panel-nav-2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      display: block;
+      z-index: -2;
+      top: 40px;
+      box-shadow: 2px -1px 4px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      left: 40px;
+      opacity: 0.8;
+    }
+
+    .left-panel-nav-3 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      display: block;
+      z-index: -3;
+      top: 60px;
+      box-shadow: 2px -1px 4px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      left: 60px;
+      opacity: 0.7;
+    }
+  }
+
+  .right-panel {
+    float: right;
+    background: $white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-bottom: -60px;
+  }
+
+  .right-panel.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .app-pull-out {
+    top: 63px;
+    height: calc(100vh - 63px);
+
+    .pull-out-less-content-container {
+      .pull-out-content {
+        padding: 0;
+      }
+    }
+  }
+}

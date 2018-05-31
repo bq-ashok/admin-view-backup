@@ -1,0 +1,25 @@
+<div class="competency-container-tree">
+  <div class="taxonomy" style="overflow-y: {{if chartOverFlow 'hidden' 'auto'}}">
+    <div class="switch-view">
+      {{#if isZoomEnabled}} <span class="text">{{t 'common.zoom-in'}}</span>
+      {{else}}
+        <span class="text">{{t 'common.zoom-out'}}</span>
+      {{/if}}
+      {{app-switch  onOptionSwitch='onChangeSkyline' isChecked=isSkylineEnabled}}
+    </div>
+    {{taxonomy-tree-view data=taxonomyTreeViewData  isZoomEnabled=isZoomEnabled  onClickNodeMoreInfo="onClickNodeMoreInfo" onClickNode='onClickTaxonomyNode' reloadCount=reloadCount}}
+  </div>
+  {{#app-pull-out showPullOut=showPullOut title=nodeData.code description=nodeData.name showMore=isCompetencyNode as |section| }}
+    {{#if section.isLessContent}}
+      {{gcm-pull-out-body
+       contentCountData=contentCount
+       isLoading=isLoading
+       nodeData=nodeData
+       signatureContents=signatureContents
+       breadcrumb=nodeData.parent
+       nodeDescription=nodeData.description
+      }} {{else if section.isMoreContent}}
+      {{gcm-pull-out-more-content nodeData=nodeData prerequisites=prerequisites courseContent=courseContent unitContent=unitContent lessonContent=lessonContent resourceContent=resourceContent collectionContent=collectionContent assessmentContent=assessmentContent questionContent=questionContent}}
+    {{/if}}
+  {{/app-pull-out}}
+</div>

@@ -1,0 +1,204 @@
+.competencies-accordion-summary-items {
+  background: white;
+  margin: 0 auto;
+
+  .competency-items {
+    padding: 10px 12px 0;
+    width: 100%;
+    display: flex;
+    height: 40px;
+    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid $dark-50;
+
+    .assessment {
+      float: left;
+      margin: 7px 8px 7px -35px;
+
+      i {
+        background: url("images/accordion-assessment-icon.svg");
+        width: 20px;
+        height: 15px;
+        object-fit: contain;
+        display: block;
+      }
+    }
+
+    .collection {
+      float: left;
+      margin: 7px 8px 7px -35px;
+
+      i {
+        background: url("images/accordion-collection-icon.svg");
+        width: 20px;
+        height: 15px;
+        object-fit: contain;
+        display: block;
+      }
+    }
+
+    .panel-title {
+      display: inline-block;
+      width: 70%;
+
+      .title {
+        font-weight: bold;
+        height: 30px;
+        margin-right: 25px;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: capitalize;
+        text-align: left;
+        color: #4a4a4a;
+        float: left;
+
+        .caret {
+          margin-left: 100px;
+        }
+      }
+
+      .sub-title {
+        font-size: 13px;
+        color: $gray-lighter;
+      }
+    }
+
+    .panel-info {
+      float: right;
+      display: flex;
+
+      .status {
+        font-size: 16px;
+        display: inline-block;
+        text-align: center;
+        width: 50px;
+      }
+
+      .time {
+        width: 110px;
+        font-size: 16px;
+        text-align: right;
+      }
+    }
+  }
+
+  .panel-body {
+    padding: 3px !important;
+  }
+
+  .panel-collapse {
+    .panel-body {
+      padding: 3px !important;
+
+      .panel-group {
+        .assessment {
+          float: left;
+          margin: 13px -25px;
+
+          i {
+            background: url("images/accordion-assessment-icon.svg");
+            width: 26px;
+            height: 20px;
+            object-fit: contain;
+            display: block;
+          }
+        }
+
+        %content-icon-size {
+          -webkit-background-size: 20px 20px;
+          background-size: 20px 20px;
+          height: 20px;
+          width: 20px;
+          display: block;
+        }
+
+        .resource-icon {
+          float: left;
+          margin: 9px -25px;
+
+          &.video i {
+            background-image: url("../assets/images/video-resource-green.svg");
+            @extend %content-icon-size;
+          }
+
+          &.webpage i {
+            background-image: url("../assets/images/website-resource-green.svg");
+            @extend %content-icon-size;
+          }
+
+          &.interactive i {
+            background-image: url("../assets/images/interactive-resource-green.svg");
+            @extend %content-icon-size;
+          }
+
+          &.text i {
+            background-image: url("../assets/images/text-resource-green.svg");
+            @extend %content-icon-size;
+          }
+
+          &.audio i {
+            background-image: url("../assets/images/audio-resource-green.svg");
+            @extend %content-icon-size;
+          }
+
+          &.image i {
+            background-image: url("../assets/images/image-resource-green.svg");
+            @extend %content-icon-size;
+          }
+
+          &.question i {
+            background-image: url("../assets/images/question-resource-green.svg");
+            @extend %content-icon-size;
+          }
+        }
+
+        .items {
+          height: 40px;
+          padding: 8px;
+          border-bottom: 1px solid $dark-50;
+          display: flex;
+
+          .title {
+            width: 80%;
+          }
+
+          .panel-info {
+            float: right;
+            text-align: right;
+            width: 20%;
+
+            .correct {
+              margin-right: 60px;
+              float: left;
+
+              i {
+                background: url("images/tick-green.svg");
+                width: 21px;
+                height: 20px;
+                object-fit: contain;
+                display: block;
+              }
+            }
+
+            .wrong {
+              margin-right: 60px;
+              float: left;
+
+              i {
+                background: url("images/wrong-answer.svg");
+                width: 14px;
+                height: 13px;
+                object-fit: contain;
+                display: block;
+              }
+            }
+
+            .time {
+              padding: 0 32px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

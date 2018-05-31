@@ -1,0 +1,260 @@
+.learning-map.competency-table {
+  height: 70vh;
+  .table-responsive {
+    width: 1221px;
+    margin: auto;
+    .header {
+      .competency-data-level {
+        display: block;
+        background-image: url("images/crosswalk-subject.png");
+        height: 50px;
+        background-size: contain;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        color: $white;
+        line-height: 50px;
+        display: flex;
+        div.data-level-info {
+          width: 70%;
+          text-transform: uppercase;
+          margin: auto;
+        }
+        span {
+          .material-icons {
+            cursor: pointer;
+          }
+        }
+
+        .toggle-competency {
+          font-size: 13px;
+          font-weight: bold;
+          display: flex;
+          .title {
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+
+    .thead {
+      display: flex;
+      height: 44px;
+      line-height: 44px;
+      color: $dark-400;
+      font-weight: bold;
+      margin: auto;
+      border-bottom: 1px solid $dark-300;
+      .th {
+        padding-left: 8px;
+        i {
+          float: right;
+          line-height: 2.2;
+          margin-right: 15px;
+          cursor: pointer;
+        }
+        &.competency-info {
+          text-transform: uppercase;
+          font-size: 15px;
+          font-weight: bold;
+          color: $dark-400;
+        }
+
+        &.prerequisites-info {
+          text-transform: uppercase;
+          font-size: 15px;
+          font-weight: bold;
+          color: $dark-400;
+        }
+      }
+
+      %content-icon-size {
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+        margin-top: 12px;
+      }
+      .course {
+        i {
+          background-image: url("images/course-icon.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .assessment {
+        i {
+          background-image: url("images/assessment-icon.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .lesson {
+        i {
+          background-image: url("images/lesson-icon.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .unit {
+        i {
+          background-image: url("images/unit-icon.svg");
+          @extend %content-icon-size;
+          background-size: 17px 17px;
+          width: 17px;
+          height: 17px;
+        }
+      }
+
+      .collection {
+        i {
+          background-image: url("images/collection-icon.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .resource {
+        i {
+          background-image: url("images/resource-icon.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .question {
+        i {
+          background-image: url("images/question-icon.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .rubric {
+        i {
+          background-image: url("images/rubric-icon.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .signatureCollection {
+        i {
+          background-image: url("images/collection-orange.svg");
+          @extend %content-icon-size;
+        }
+      }
+
+      .signatureAssessment {
+        i {
+          background-image: url("images/assessment-orange.svg");
+          @extend %content-icon-size;
+        }
+      }
+    }
+
+    .table-structure {
+      height: 75vh;
+      overflow: auto;
+      margin-bottom: 20px;
+      .table {
+        .tbody {
+          .competency-info {
+            display: flex;
+            font-size: 12px;
+            color: $dark-400;
+
+            .competency-id {
+              min-width: 160px;
+              font-weight: bold;
+            }
+          }
+          .content-info {
+            cursor: pointer;
+            text-align: center;
+            color: $dark-400;
+            font-size: 15px;
+            vertical-align: middle;
+          }
+          .prerequisites-info {
+            .prerequisites-id {
+              color: $dark-400;
+              font-weight: bold;
+              font-size: 12px;
+              cursor: pointer;
+            }
+          }
+          .micro-competency {
+            .competency-info {
+              padding-left: 20px;
+            }
+            &.hide-row {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &.mask-view {
+        opacity: 0.5;
+        pointer-events: none;
+        background: $light-300;
+        tr {
+          td {
+            background: $light-300;
+          }
+        }
+      }
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $dark-100;
+        border-radius: 4px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: $light-300;
+      }
+    }
+
+    //Signature resource not available in the mock
+    .signatureResource {
+      display: none;
+    }
+    .competency-info {
+      width: 515px;
+    }
+    .content-info {
+      width: 50px;
+      background-color: $ultra-light-gray;
+      &.course {
+        border-left: 2px solid $light-300;
+        border-right: 2px dashed $light-300;
+      }
+      &.resource {
+        border-left: 2px dashed $light-300;
+      }
+      &.rubric {
+        border-right: 2px dashed $light-300;
+      }
+      &.resource,
+      &.rubric,
+      &.question,
+      &.course {
+        background-color: $light-100;
+      }
+    }
+    .prerequisites-info {
+      width: 190px;
+      border-left: 2px solid $light-300;
+      .prerequisites-id {
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+    .not-available {
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+  }
+}

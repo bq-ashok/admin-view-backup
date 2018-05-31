@@ -1,0 +1,241 @@
+.gcm-pull-out-more-content {
+  .content-card {
+    margin: auto;
+    width: 220px;
+    .panel {
+       box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.07);
+       .panel-heading {
+         padding: 0;
+         background-color: $white;
+         border-bottom: solid 1px $gray-lighter;
+         .card-heading {
+           height: 128px;
+           background-size: cover;
+           background-repeat: no-repeat;
+           position: relative;
+           border-top-left-radius: 4px;
+           border-top-right-radius: 4px;
+           .title {
+             position: absolute;
+             bottom: 0;
+             color: $white;
+             z-index: 99;
+             font-weight: bold;
+             padding: 8px;
+             @include ellipsis($font-size: 13px, $line-height: 1.4, $lines-to-show: 2);
+             max-height: 48px;
+           }
+           &:after {
+             display: block;
+             position: absolute;
+             z-index: 9;
+             background-image: linear-gradient(
+               to bottom,
+               rgba(255, 255, 255, 0) 0,
+               $gray-base 130%
+             );
+             height: 60%;
+             width: 100%;
+             margin-top: 51px;
+             content: "";
+           }
+         }
+         .content-count-info {
+           height: 27px;
+           line-height: 27px;
+           display: flex;
+           .icon {
+             display: flex;
+             margin-left: 15px;
+             color: $gray;
+             font-size: 13px;
+             i {
+               margin: auto;
+               width: 21px;
+               height: 17px;
+               background-size: 21px 17px;
+               object-fit: contain;
+               display: block;
+             }
+             .resource {
+               background: url("images/resource-icon.svg");
+               width: 21px;
+               height: 17px;
+               background-size: 21px 17px;
+             }
+           }
+           .question {
+             background: url("images/question-icon.svg");
+           }
+         }
+         .resource-card-heading {
+           .card-title {
+             display: flex;
+             border-bottom: solid 1px $gray-lighter;
+             .title {
+               color: $blue-400;
+               margin: 12px 12px 12px 0;
+               @include ellipsis($font-size: 15px, $line-height: 1.13, $lines-to-show: 2);
+             }
+             .icon {
+               i {
+                 display: block;
+                 margin: 12px;
+               }
+               .video {
+                 background: url("images/video-resource-green.svg");
+                 -webkit-background-size: 31px 30px;
+                 background-size: 31px 30px;
+                 height: 30px;
+                 width: 31px;
+               }
+               .webpage {
+                 background: url("images/website-resource-green.svg");
+                 -webkit-background-size: 29px 30px;
+                 background-size: 29px 30px;
+                 height: 30px;
+                 width: 29px;
+               }
+               .interactive {
+                 background: url("images/interactive-resource-green.svg");
+                 -webkit-background-size: 34px 30px;
+                 background-size: 34px 30px;
+                 height: 30px;
+                 width: 34px;
+               }
+               .question {
+                 background: url("images/question-resource-green.svg");
+                 -webkit-background-size: 30px 30px;
+                 background-size: 30px 30px;
+                 height: 30px;
+                 width: 30px;
+               }
+               .rubric {
+                 background: url("images/rubric-green.svg");
+                 -webkit-background-size: 30px 30px;
+                 background-size: 30px 30px;
+                 height: 30px;
+                 width: 30px;
+               }
+               .image {
+                 background: url("images/image-resource-green.svg");
+                 -webkit-background-size: 30px 30px;
+                 background-size: 30px 30px;
+                 height: 30px;
+                 width: 30px;
+               }
+               .text {
+                 background: url("images/text-resource-green.svg");
+                 -webkit-background-size: 31px 30px;
+                 background-size: 31px 30px;
+                 height: 30px;
+                 width: 31px;
+               }
+               .audio {
+                 background: url("images/audio-resource-green.svg");
+                 -webkit-background-size: 34px 30px;
+                 background-size: 34px 30px;
+                 height: 30px;
+                 width: 34px;
+               }
+             }
+           }
+           .card-format {
+             height: 27px;
+             .format {
+               font-size: 13px;
+               color: $gray;
+               text-transform: capitalize;
+               margin-left: 15px;
+             }
+           }
+         }
+       }
+       .panel-body {
+         padding: 0;
+         margin: 0 15px;
+         .creator-info {
+           padding: 8px 0 3px;
+           display: flex;
+           span {
+             margin-right: 8px;
+           }
+           .created-by {
+             width: 60px;
+             font-size: 13px;
+             font-style: italic;
+             line-height: 1.69;
+             color: $gray;
+             opacity: 0.9;
+           }
+           .name {
+             font-size: 13px;
+             line-height: 1.69;
+             color: $blue-400;
+             width: 88px;
+           }
+           .avatar {
+             img {
+               width: 21px;
+               height: 19.8px;
+               border-radius: 50%;
+             }
+           }
+         }
+         .description {
+           height: 46.8px;
+           text-align: left;
+           color: $gray;
+           @include ellipsis($font-size: 13px, $line-height: 1.2, $lines-to-show: 3);
+         }
+         .tag-list {
+           margin: 5px 0 5px 0;
+         }
+       }
+       .panel-footer {
+         padding: 0;
+         height: 92px;
+         background-color: $white;
+         border-top: solid 1px #f2f2f2;
+         .actions {
+           height: 42px;
+           width: 100%;
+           border-bottom: dashed 2px #979797;
+           .add, .share {
+             float: right;
+             width: 43px;
+             height: 42px;
+             padding: 9px 0 0 9px;
+             border-left: solid 1px #f2f2f2;
+           }
+           .add {
+             color: $orange-400;
+           }
+         }
+
+         .data-info {
+           display: flex;
+           .data {
+             width: calc(100% / 3);
+             font-size: 10px;
+             text-align: center;
+             color: $dark-400;
+             margin-top: 12px;
+             .baloon {
+               margin: auto;
+               width: 26px;
+               height: 12px;
+               border-radius: 19px;
+               background-color: $green-400;
+               font-size: 10px;
+               font-weight: bold;
+               text-align: center;
+               line-height: 12px;
+               color: $white;
+             }
+           }
+         }
+       }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<div>
+  <div class="author">
+    <span class="title">  {{t "common.created-by" }} </span>
+    <img class="img-responsive" src="{{collection.owner.thumbnail}}">
+    <span class="owner">{{collection.owner.username}}</span>
+    {{#if collection.publish_date}}
+      <span class="date">on {{format-date collection.publish_date 'MMMM DD, YYYY' true}}</span>
+    {{/if}}
+  </div>
+
+  <div class="collection-info">
+    <span class="title"> {{collection.title}}</span>
+    {{#if (or (eq collection.type "resource") (eq collection.type "question") )}}
+      <div class="resource-info">
+        <div class="resources-icon">
+          {{#if (eq collection.type "question") }}
+            <div class="multiple_choice_question"> <i> </i> </div>
+          {{else}}
+            <div class="{{collection.content_subformat}}"> <i> </i> </div>
+          {{/if}}
+
+        </div>
+        <div class="discription"> {{ safe-html collection.description}} </div>
+      </div>
+      {{else }}
+      <div class="header-info">
+        <div class="collection-image">
+          <img class="img-responsive" src="{{collection.url}}">
+        </div>
+        <div class="discription"> {{collection.description}} </div>
+      </div>
+    {{/if}}
+  </div>
+
+
+  <div class="taxonomy-info">
+    <div class="title">
+      {{t "activities.pull-out.taxonomy-title"}}
+    </div>
+    <div class="items">
+      {{#if selectedItem.taxonomySubject}}
+        {{#each selectedItem.taxonomySubject as |subject|}}
+          <div class="subject item-box">
+            <div class="ellipsis">{{subject}}</div>
+          </div>
+        {{/each}}
+        {{#each selectedItem.taxonomyCourse as |course|}}
+          <div class="course item-box">
+            <div class="ellipsis">{{course}}</div>
+          </div>
+        {{/each}}
+        {{#each selectedItem.taxonomyDomain as |domain|}}
+          <div class="domain item-box">
+            <div class="ellipsis">{{domain}}</div>
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="subject item-box">
+          No Subject Available
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

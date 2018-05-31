@@ -1,0 +1,29 @@
+<div class="app-competency-info">
+  <div class="prerequisites-competency-info">
+    <div class="competency-info">
+      <div class="competency-id">
+        {{competencyInfo.id}}
+      </div>
+      <div class="title">
+        {{competencyInfo.title}}
+      </div>
+    </div>
+
+    {{#each competencyInfo.contentCounts as |content|}}
+      <div class="content-info {{content.type}}">
+        {{content.value}}
+      </div>
+    {{/each}}
+
+    <div class="prerequisites-info">
+      {{#each competencyInfo.prerequisites as |prerequisites|}}
+        <div class="prerequisites-id" {{action "onSelectPrerequisites" prerequisites.id}}>
+          {{prerequisites.id}}
+        </div>
+      {{/each}}
+    </div>
+    <div class="close-popup" {{action "onCloseInfoPopup"}}>
+      {{app-icon name="clear"}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+.competencies-accordion-summary {
+  height: auto;
+  background: white;
+  margin: 0 auto;
+  // width: 960px;
+  .competency {
+    padding: 5px 12px 0;
+    width: 100%;
+    display: table;
+    border-bottom: 1px solid $dark-50;
+    border-top: 1px solid $dark-50;
+
+    .panel-title {
+      display: inline-block;
+      width: 60%;
+
+      .title {
+        width: 380px;
+        height: 20px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: $dark-800;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      .sub-title {
+        font-size: 13px;
+        color: $dark-800;
+        font-weight: normal;
+        width: 139px;
+        height: 17px;
+        font-size: 12px;
+        text-transform: capitalize;
+        letter-spacing: normal;
+        text-align: left;
+        color: $dark-800;
+      }
+    }
+
+    .panel-info {
+      float: right;
+      display: flex;
+      width: 36%;
+
+      .status {
+        margin-left: 30px;
+        font-size: 16px;
+        float: left;
+        width: 150px;
+      }
+
+      .time {
+        font-size: 16px;
+        margin: 8px 0;
+
+        .in_progress {
+          i {
+            background: url("images/competencies-inProgress.svg");
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            display: block;
+          }
+        }
+
+        .completed {
+          i {
+            background: url("images/competencies-mastered.svg");
+            width: 30.3px;
+            height: 30.2px;
+            object-fit: contain;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

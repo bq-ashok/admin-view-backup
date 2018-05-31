@@ -1,0 +1,100 @@
+<div class="competencies-report">
+  <div class="left-panel">
+    {{#if isCompetency}}
+      <div class="header {{if (or isCourseModeEnabled isListModeEnabled) ''  'domain-header'}}">
+        <div class="panel-header {{if (or isCourseModeEnabled isListModeEnabled) 'course-list-view'  'domain-view'}}">
+          <div class="pull-left panel-title">
+            <div class="subject-title">{{subjectTitle}}</div>
+          </div>
+        </div>
+        {{#if (or isCourseModeEnabled isListModeEnabled)}}
+        {{else}}
+          <div class="skyline">
+            <span class="text">{{t 'common.skyline'}}</span>
+            {{app-switch  onOptionSwitch='onChangeSkyline' isChecked=isSkylineEnabled}}
+          </div>
+          <div class="chart-reset-button">
+            {{# if isExpandChartEnabled}}
+            <span class="text">{{t 'common.collapse-chart'}}</span>
+            {{else}}
+            <span class="text">{{t 'common.expand-chart'}}</span>
+            {{/if}}
+            {{app-switch  onOptionSwitch='onChangeResetChart' isChecked=isExpandChartEnabled disabled=disabledExpandButton}}
+          </div>
+        {{/if}}
+        <div class="nav-header">
+          {{learner.competencies-matrix-header onChangeHeaderView="onChangeHeaderView"}}
+        </div>
+      </div>
+      <div class="body">
+        {{#if isListModeEnabled}}
+          <div class="report-panel">
+            <div class="report-panel-body">
+              {{charts.competencies-chart data=userCompetencyStats}}
+            </div>
+            <div class="summary-accordion">
+              {{#each userCompetencies as | competency |}}
+                {{learner.competencies-accordion-summary competency=competency userId=userId}}
+              {{/each}}
+            </div>
+          </div>
+
+          {{else if isCourseModeEnabled }} {{charts.competency-matrix-chart userId=userId subjectId=subjectId onCompetencyPullOut='onCompetencyPullOut' showPullOut=showPullOut}}
+        {{else}}
+          {{charts.competency-matrix-domain-chart userId=userId  subjectId=subjectId onCompetencyPullOut='onCompetencyPullOut' onChangeSkyline='onChangeSkyline' onChangeResetChart='onChangeResetChart' showPullOut=showPullOut isSkylineEnabled=isSkylineEnabled isExpandChartEnabled=isExpandChartEnabled}}
+        {{/if}}
+      </div>
+      {{else if isJourney}}
+      <div class="time-spent-activities report-panel">
+        <span>{{t "learner.time-spent-activities"}} </span>
+        <div class="report-panel-body">
+          {{charts.time-spent-activities data=userTimeSpentStats}} {{learner.explore-button routeTo="activities" onClickExploreButton="onClickExploreButton"}}
+        </div>
+      </div>
+      <div class="time-spent-courses report-panel">
+        <span>{{t "learner.time-spent-activities"}} </span>
+        <div class="report-panel-body">
+          {{charts.time-spent-courses data=userStatsByCourse userId=userId}} {{learner.explore-button routeTo="courses" onClickExploreButton="onClickExploreButton"}}
+        </div>
+      </div>
+
+      <div class="courses-independent-journey report-panel">
+        <span>{{t "learner.courses-independent-journeys"}} </span>
+        <div class="report-panel-body" {{action 'onExploreJourneyTaken'}}>
+          {{charts.courses-independent-journey data=userJourneyStats}} {{learner.explore-button}}
+        </div>
+      </div>
+    {{else}}
+      {{#if isLoading}}
+        {{three-bounce-spinner}}
+      {{else}}
+        {{#app-panel-box localizeTitle=courseTitle courseReport="true" showBackButton="true" onClickBackButton="onClickCourseBackButton" }}
+          {{#each userPerformanceUnits as |unit|}}
+            {{learner.course-accordion-unit unit=unit courseId=courseId userId=userId classId=classId}}
+          {{/each}}
+        {{/app-panel-box}}
+      {{/if}}
+
+    {{/if}}
+
+    <div class="left-panel-nav-1"></div>
+    <div class="left-panel-nav-2"></div>
+    <div class="left-panel-nav-3"></div>
+
+  </div>
+
+  <div class="right-panel {{if isListModeEnabled 'disabled' ''}}">
+    {{learner.competencies-report-panel taxonomySubjects=taxonomySubjects isCompetencyTabs=isCompetencyTabs isJourneyTabs=isJourneyTabs isSelectedSubject=isSelectedSubject isSelectedCourse=isSelectedCourse isSelectedCourseId=isSelectedCourseId journeyCourses=journeyCourses subjectChange='subjectChange' courseChange='courseChange' competencyTabs='competencyTabs'}}
+  </div>
+
+  {{#app-pull-out showPullOut=showPullOut title=description description=title showMore=showMore isLoading=isLoading as |section|}}
+    {{#if section.isLessContent}}
+      {{learner.competencies-pull-out-body
+        collection=collection
+        userId=userId
+        competency=competency
+        isLoading=isLoading
+     }}
+    {{/if}}
+  {{/app-pull-out}}
+</div>

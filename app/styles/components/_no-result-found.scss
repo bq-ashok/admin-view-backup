@@ -1,0 +1,21 @@
+.no-result-found {
+  margin: auto;
+  width: 220px;
+  .panel-body {
+    .no-results-content {
+      .title {
+        font-size: 15px;
+        text-align: center;
+      }
+      .icon {
+        text-align: center;
+        padding: 10px;
+        i {
+          color: $gray-base;
+          font-size: 40px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

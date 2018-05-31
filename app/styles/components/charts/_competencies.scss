@@ -1,0 +1,79 @@
+.competencies-chart {
+  width: 260px;
+  height: 260px;
+
+  #competencies-chart {
+    height: 200px;
+  }
+
+  .competencies-chart-footer {
+    padding-left: 15px;
+  }
+
+  .count {
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: $dark-800;
+    line-height: normal;
+  }
+
+  .title {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    color: $dark-800;
+  }
+
+  .competencies-mastery {
+    width: 125px;
+    float: left;
+
+    .title {
+      padding-top: 5px;
+    }
+
+    svg {
+      circle {
+        stroke: #2662BE;
+        stroke-width: 6px;
+      }
+    }
+
+    .count {
+      font-size: 30px;
+      font-weight: bold;
+      text-anchor: middle;
+      width: 40px;
+      color: $dark-800;
+    }
+
+    .mastered {
+      padding-left: 30px;
+    }
+  }
+
+  .competencies-in-progress {
+    width: 125px;
+    float: left;
+    border-right: 1px solid $dark-800;
+
+    .title {
+      padding-top: 5px;
+    }
+
+    .count {
+      font-size: 30px;
+      font-weight: bold;
+      text-anchor: middle;
+      width: 40px;
+      color: $dark-800;
+    }
+
+    .in-progress {
+      padding-left: 30px;
+    }
+  }
+}

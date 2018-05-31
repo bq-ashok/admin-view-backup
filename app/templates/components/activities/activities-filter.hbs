@@ -1,0 +1,11 @@
+<div class="filters">
+  <div class="title">
+    {{t 'activities.filters'}}
+    {{#unless isEmptyFilters}}
+      <span class="clear-all" {{ action 'clearFilters' }}>     {{t 'activities.clear-all'}} </span>
+    {{/unless}}
+  </div>
+  {{#each filterTypes as |filterType|}}
+    {{activities.activities-filter-accordion filterType=filterType selectedFilterItems=selectedFilterItems onClickCheckbox="onClickCheckbox" onSelectCenturySkills="onSelectCenturySkills"}}
+  {{/each}}
+</div>

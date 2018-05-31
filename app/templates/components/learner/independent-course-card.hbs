@@ -1,0 +1,34 @@
+<div class="panel" {{action 'courseReport' course}}>
+  <div class="panel-heading">
+    <div class="card-heading" style="background-image: url({{course.thumbnail}})">
+      <div class="current-activity">
+        <div class="title">
+          {{course.courseTitle}}
+        </div>
+        <i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="items-icon">
+      <span><i data-toggle="tooltip" data-placement="auto" data-trigger="hover" class="assessment" title="{{t 'learner.journeys.assessments'}}"></i> {{course.totalAssessments}}</span>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="first-half" style="background-color:{{grade-color course.averageScore}}">
+      <div class="top-part">
+        <span>
+         <i class="course-default"></i>
+       </span>
+        <div class="performance">
+          <div class="percentage ">{{course.averageScore}}%</div>
+          <div class="performance-text">Performance</div>
+        </div>
+      </div>
+      <div class="completion-bar">
+        {{charts/gcm-x-bar-chart data=Performances }}
+        <div class="completion-text">{{Performances.percentage}}% completed </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<ul>
+  {{#each filterItems as |filterItem index|}}
+    <li class="{{if (not filterItem.isActive) 'inactive'}}">
+      <label {{ action 'onFilterSelection' filterItem}}>
+     {{t filterItem.label}}
+     {{#if (eq index selectedIndex)}}
+    <input type="radio" checked="checked" name="radio">
+    {{else}}
+    <input type="radio"  name="radio">
+    {{/if}}
+    <span class="checkmark"></span>
+  </label>
+    </li>
+  {{/each}}
+</ul>

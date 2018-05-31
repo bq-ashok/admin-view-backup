@@ -1,0 +1,61 @@
+[{
+  "code": "NA",
+  "latitude": "41",
+  "longitude": "-103"
+}, {
+  "code": "PA",
+  "latitude": "-7.25",
+  "longitude": "154"
+}, {
+  "code": "EU",
+  "latitude": "48",
+  "longitude": "5.5"
+}, {
+  "code": "AFR",
+  "latitude": "5.82",
+  "longitude": "16.8",
+  "totalPercentage": "100"
+}, {
+  "code": "LA",
+  "latitude": "-15",
+  "longitude": "-61"
+}, {
+  "code": "ME",
+  "latitude": "29.3",
+  "longitude": "45.7"
+}, {
+  "code": "EUR",
+  "latitude": "51.68",
+  "longitude": "39",
+  "totalPercentage": "100"
+}, {
+  "code": "FUS",
+  "latitude": "61.3",
+  "longitude": "82"
+}, {
+  "code": "AEC",
+  "latitude": "11.2",
+  "longitude": "122"
+}, {
+  "code": "CH",
+  "latitude": "33.8",
+  "longitude": "104.4"
+},
+{
+  "code": "ASI",
+  "latitude": "48.26",
+  "longitude": "81.21",
+  "totalPercentage": "100"
+},
+{
+  "code": "AME",
+  "latitude": "36.07",
+  "longitude": "-90.70",
+  "totalPercentage": "100"
+},
+{
+  "code": "OCE",
+  "latitude": "-23.55",
+  "longitude": "132.5",
+  "totalPercentage": "100"
+}]

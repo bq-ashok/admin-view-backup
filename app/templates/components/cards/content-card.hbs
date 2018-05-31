@@ -1,0 +1,66 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {{#if (or isAssessment isCollection isCourse )}}
+      <div class="card-heading" style="background-image: url({{content.thumbnailUrl}})">
+        <div class="title">{{content.title}}</div>
+      </div>
+      <div class="content-count-info">
+        {{#if (gt content.resourceCount 0)}}
+          <span class="icon"><i class="resource"></i> {{content.resourceCount}}</span>
+        {{/if}}
+        {{#if (gt content.questionCount 0)}}
+          <span class="icon"><i class="question"></i> {{content.questionCount}}</span>
+        {{/if}}
+      </div>
+    {{else}}
+      <div class="resource-card-heading">
+        <div class="card-title">
+          <span class="icon">
+            <i class="{{if isResource content.format content.type}}"></i>
+          </span>
+          <span class="title">{{content.title}}</span>
+        </div>
+        <div class="card-format">
+          <span class="format">{{if isQuestion (t (concat 'common.question-type.' content.format)) content.format}}</span>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+  <div class="panel-body">
+    <div class="creator-info">
+      {{#if content.creator}}
+        <span class="created-by">{{t 'gcm.content.created-by'}}</span>
+      {{/if}}
+      <span class="avatar">
+        <img class="img-responsive" src="{{ content.owner.avatarUrl }}">
+      </span>
+      <span class="name ellipsis">{{if content.creator content.creator.username content.user.username}}</span>
+    </div>
+    <div class="description">
+      {{content.description}}
+    </div>
+    {{#if tags.length}}
+      <div class="tag-list">
+        {{taxonomy.taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true}}
+      </div>
+    {{/if}}
+  </div>
+  <div class="panel-footer">
+    <div class="actions">
+      {{#if isAddEnabled}}
+        <div class="add">
+          <i class="material-icons">add</i>
+        </div>
+      {{/if}}
+      <div class="share">
+        <i class="material-icons">share</i>
+      </div>
+    </div>
+    <div class="data-info">
+      <div class="data"><div class="baloon">{{content.relevance}}</div>{{t 'gcm.relevance'}}</div>
+      <div class="data"><div class="baloon">{{content.engagement}}</div>{{t 'gcm.engagement'}}</div>
+      <div class="data"><div class="baloon">{{content.efficacy}}</div>{{t 'gcm.efficacy'}}</div>
+    </div>
+
+  </div>
+</div>

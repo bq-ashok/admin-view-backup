@@ -1,0 +1,168 @@
+<div class="modal-header">
+  <div class="header-info">
+    <div>
+      {{t 'learner.hide'}}
+    </div>
+    <div data-dismiss="modal" class="thumbnail-container" style="background-image: url({{userProfile.thumbnail}})">
+      <div class="clear-icon">{{app-icon name="clear"}}</div>
+    </div>
+    <div>
+      {{t 'learner.details'}}
+    </div>
+  </div>
+</div>
+<div class="modal-body">
+  <div class="user-profile-info">
+    <div class="user-profile-image">
+      <div class="img-container">
+        <img class="img-responsive" src="{{userProfile.thumbnail}}">
+      </div>
+    </div>
+    <div class="user-profile-more-info">
+      <div class="username ellipsis">{{userProfile.userDisplayName}}</div>
+      <div class="location">
+        <div class="school-state">{{userProfile.schoolState}}</div>
+        <div class="school-country">{{userProfile.schoolCountry}}</div>
+      </div>
+      <div class="school-info">
+        <div class="school-name">{{userProfile.school}}</div>
+        <div class="school-district">{{userProfile.schoolDistrict}}</div>
+      </div>
+    </div>
+    <div class="user-profile-range">
+      <div class="user-profile-stats">
+        <div class="range">
+          {{charts.radial-progress-chart value=citizenship maxValue="1"}}
+        </div>
+        <div class="name">
+          {{t 'learner.citizenship'}}
+        </div>
+      </div>
+      <div class="user-profile-stats">
+        <div class="range">
+          {{charts.radial-progress-chart value=authority maxValue="1"}}
+        </div>
+        <div class="name">
+          {{t 'learner.authority'}}
+        </div>
+      </div>
+      <div class="user-profile-stats">
+        <div class="range">
+          {{charts.radial-progress-chart value=reputation maxValue="1"}}
+        </div>
+        <div class="name">
+          {{t 'learner.reputation'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="user-grade-levels">
+    <div class="user-grade-level-header">
+      {{t 'learner.grade-level'}}
+    </div>
+    <div class="user-grade-level-body">
+      {{#each userGrades as |grade|}}
+        <div class="user-grade-level">
+          <div class="subject ellipsis">{{concat (split-text grade.subjectCode '.') ' : ' grade.subjectName}}</div>
+          <div class="grade">{{grade.grade}}</div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="user-preferences">
+    <div class="user-preference-header">
+      {{t 'learner.user-preferences.preferences'}}
+    </div>
+    <div class="user-preferences-body">
+      <div class="user-preference content">
+        <div class="title">
+          {{t 'learner.user-preferences.content-types'}}
+          <div class="accordion-dropdown">
+            {{#if isContentExpanded}}
+              <span {{action "onHidePanel" 'content'}}>
+                {{app-icon name="arrow_drop_up"}}
+              </span>
+            {{else}}
+              <span {{action "onShowPanel" 'content'}}>
+                {{app-icon name="arrow_drop_down"}}
+              </span>
+            {{/if}}
+          </div>
+        </div>
+        <div class="body {{if isContentExpanded 'isExpanded' 'isCollapsed'}}">
+          {{#each userPrefsContent as |content|}}
+            <div class="body-content">
+              <div class="data">
+                <span class="{{content.name}}"><i class="icon"></i></span>
+                <span class="name">{{content.name}}</span>
+              </div>
+              <div class="slider">
+                {{charts.slider-chart value=content.value maxValue="1"}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="user-preference provider">
+        <div class="title">
+          {{t 'learner.user-preferences.providers'}}
+          <div class="accordion-dropdown">
+            {{#if isProviderExpanded}}
+              <span {{action "onHidePanel" 'provider'}}>
+                {{app-icon name="arrow_drop_up"}}
+              </span>
+            {{else}}
+              <span {{action "onShowPanel" 'provider'}}>
+                {{app-icon name="arrow_drop_down"}}
+              </span>
+            {{/if}}
+          </div>
+        </div>
+        <div class="body {{if isProviderExpanded 'isExpanded' 'isCollapsed'}}">
+          {{#each userPrefsProviders as |provider|}}
+            <div class="body-content">
+              <div class="data">
+                <span class="{{provider.providerId}}"><i style="background-image: url({{provider.thumbnail}});" class="icon"></i></span>
+                <span class="name">{{provider.providerName}}</span>
+              </div>
+              <div class="slider">
+                {{charts.slider-chart value=provider.pref maxValue="1"}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="user-preference curator">
+        <div class="title">
+          {{t 'learner.user-preferences.curators'}}
+          <div class="accordion-dropdown">
+            {{#if isCuratorExpanded}}
+              <span {{action "onHidePanel" 'curator'}}>
+                {{app-icon name="arrow_drop_up"}}
+              </span>
+            {{else}}
+              <span {{action "onShowPanel" 'curator'}}>
+                {{app-icon name="arrow_drop_down"}}
+              </span>
+            {{/if}}
+          </div>
+        </div>
+        <div class="body {{if isCuratorExpanded 'isExpanded' 'isCollapsed'}}">
+          {{#each userPrefsCurators as |curator|}}
+            <div class="body-content">
+              <div class="data">
+                <span class="{{curator.curatorId}}"><i style="background-image: url({{curator.thumbnail}});" class="icon"></i></span>
+                <span class="name">{{curator.curatorName}}</span>
+              </div>
+              <div class="slider">
+                {{charts.slider-chart value=curator.pref maxValue="1"}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+</div>

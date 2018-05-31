@@ -1,0 +1,65 @@
+.taxonomy.taxonomy-tag-list,
+.taxonomy.preview-taxonomy-tag-list {
+  .non-visible-tags {
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+    background-color: $dark-400;
+    color: $white;
+    border: 0 none;
+    border-radius: 4px;
+    &:focus,
+    &:active {
+      outline: 0 none;
+    }
+  }
+
+  .popover {
+    max-width: 300px;
+    background-color: $dark-200;
+
+    .arrow:after {
+      border-left-color: $dark-200;
+      border-right-color: $dark-200;
+    }
+  }
+  &.show-description {
+    .popover-content {
+      max-height: 230px;
+      overflow-y: auto;
+      .taxonomy-tag {
+        max-width: 100%;
+      }
+    }
+    .description-tag {
+      margin: 5px 0;
+      .panel-body {
+        padding: 5px 10px;
+        min-height: inherit;
+        height: auto;
+      }
+    }
+  }
+
+  &.in-card {
+    .popover {
+      background-color: $light-100;
+      z-index: $zindex-navbar-fixed - 1;
+
+      .arrow:after {
+        border-top-color: $light-100;
+        border-bottom-color: $light-100;
+        border-left-color: transparent;
+        border-right-color: transparent;
+      }
+
+      .taxonomy-tag {
+        display: block;
+      }
+    }
+  }
+
+  .all-tags {
+    display: none;
+  }
+}

@@ -1,0 +1,50 @@
+<div class="card-panel-container">
+  <div class="card-panel-header" {{action "onShowPullOut" course}} style="background-image: url({{course.thumbnailUrl}})">
+    <div class="info">
+      <div class="title">{{course.title}}</div>
+    </div>
+  </div>
+  <div class="unit-count-container">
+    <i class="icon"></i>
+    <span>{{course.unitCount}}</span>
+  </div>
+  <div class="course-info-container">
+    <div class="course-user-info">
+      <div class="created-by">{{t (if course.sameOwnerAndCreator "common.created-by" "common.remixed-by")}}</div>
+      <div class="img-container pull-left">
+        <img class="img-responsive" src="{{course.owner.avatarUrl}}">
+      </div>
+      <div class="username">{{course.owner.displayName}}</div>
+    </div>
+    <div class="course-description">
+      {{safe-html course.description}}
+    </div>
+    <div class="course-standards ">
+      {{#if tags.length}}
+        {{taxonomy.taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true showDescription=true}}
+      {{/if}}
+    </div>
+
+  </div>
+  <div class="card-panel-footer">
+    <div class="buttons-container">
+      <div class="play-btn" title="Play" data-toggle="tooltip" data-placement="right" {{action "onPlayCourse" course.id}}>{{app-icon name="ic_play_arrow"}}</div>
+    </div>
+    <div class="course-prefs-container">
+      <span class="left-arc"></span>
+      <span class="right-arc"></span>
+      <div class="course-prefs relevance pull-left" style="background-color:rgba(0, 114, 188, {{course.relevance}})">
+        <div class="count">{{course.relevance}}</div>
+        <div class="title">{{t 'common.relevance'}}</div>
+      </div>
+      <div class="course-prefs engagement pull-left" style="background-color:rgba(0, 114, 188, {{course.engagement}})">
+        <div class="count">{{course.engagement}}</div>
+        <div class="title">{{t 'common.engagement'}}</div>
+      </div>
+      <div class="course-prefs efficacy pull-left" style="background-color:rgba(0, 114, 188, {{course.efficacy}})">
+        <div class="count">{{course.efficacy}}</div>
+        <div class="title">{{t 'common.efficacy'}}</div>
+      </div>
+    </div>
+  </div>
+</div>

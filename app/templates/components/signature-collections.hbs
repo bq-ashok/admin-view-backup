@@ -1,0 +1,13 @@
+{{#if collections}}
+  <h6> {{t (concat 'common.signature-' collectionType) }} </h6>
+  {{#each collections as | item |}}
+    <div class="signature">
+      <div class="image">
+        <div class="img-container">
+          <img class="img-responsive" src="{{item.thumbnail}}">
+        </div>
+      </div>
+      <span class="collection-name"> {{item.title}}</span>
+    </div>
+  {{/each}}
+{{/if}}

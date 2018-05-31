@@ -1,0 +1,149 @@
+.collection-pull-out-more-content {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .more-pull-out-header {
+    height: 100px;
+    background-color: $white;
+    border-bottom: dashed 2px #979797;
+
+    .header-content {
+      padding-top: 30px;
+      width: calc(100% - 30px);
+      height: 100%;
+      margin: 0 5px 0 auto;
+      display: flex;
+
+      .title {
+        width: inherit;
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px;
+        text-transform: uppercase;
+
+        .oval {
+          width: 16px;
+          height: 16px;
+          margin: 0 auto;
+          border-radius: 10px;
+        }
+
+        span {
+          font-size: 15px;
+          color: #4a4a4a;
+          cursor: pointer;
+        }
+      }
+
+      .enable {
+        .oval.extracted {
+          background-color: #1aa9eb;
+        }
+      }
+
+      .disable {
+        .oval.extracted {
+          border: 1px dashed;
+        }
+      }
+
+      .enable {
+        .oval.curated {
+          background-color: #3b802c;
+        }
+      }
+
+      .disable {
+        .oval.curated {
+          border: 1px dashed;
+        }
+      }
+
+      .enable {
+        .oval.tagged {
+          background-color: #ed8e36;
+        }
+      }
+
+      .disable {
+        .oval.tagged {
+          border: 1px dashed;
+        }
+      }
+
+      .enable {
+        .oval.computed {
+          background-color: #37424b;
+        }
+      }
+
+      .disable {
+        .oval.computed {
+          border: 1px dashed;
+        }
+      }
+
+      .disable {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .body {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+
+    .header-property {
+      .headergroup {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 0;
+
+        .header-title {
+          font-size: 19.5px;
+          margin-bottom: 20px;
+          font-weight: bold;
+          color: #37424b;
+          display: inherit;
+          text-align: right;
+          margin-left: 20px;
+          width: 40%;
+          text-transform: capitalize;
+        }
+
+        .header-lable {
+          text-align: right;
+          font-size: 15px;
+          font-weight: bold;
+          color: #4a4a4a;
+          text-transform: capitalize;
+        }
+
+        .header-value {
+          font-size: 15px;
+          text-align: left;
+          color: #4a4a4a;
+          padding: 0;
+
+          .show-more {
+            font-size: 12px;
+            color: $blue-400;
+            cursor: pointer;
+          }
+        }
+
+        .header-no-value {
+          line-height: normal;
+          padding: 0;
+        }
+      }
+    }
+
+    .usage-statistics {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+  }
+}

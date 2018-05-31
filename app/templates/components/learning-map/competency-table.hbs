@@ -1,0 +1,71 @@
+<div class="table-responsive">
+  <div class="header">
+    <div class="competency-data-level">
+      <div class="toggle-competency">
+        {{app-toggle-button isChecked=isShowMicroCompetency onToggleButton="onToggleButton"}}
+        <span class="title">{{t 'crosswalk.micro-competency'}}</span>
+      </div>
+      <div class="data-level-info">
+        {{#if searchTerm}}
+          Keyword: {{searchTerm}}
+        {{else}}
+          {{concat selectedDataLevelItems.category ' / ' (truncate text=selectedDataLevelItems.subject maxLength=20) ' / ' (truncate text=selectedDataLevelItems.course maxLength=20)}}
+          {{if selectedDataLevelItems.domain (concat ' / ' selectedDataLevelItems.domain ' Domains')}}
+        {{/if}}
+        <span {{action "onScrollTop"}}><i class="material-icons">arrow_upward</i></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="thead">
+    <div class="th competency-info">
+      {{t 'common.competency'}}
+    </div>
+    {{#each contentSequence as |content|}}
+      <div class="th content-info {{content}}" data-toggle="tooltip" title="{{content}}">
+        <i class="icon"></i>
+      </div>
+    {{/each}}
+    <div class="th prerequisites-info">
+      {{t 'common.pre-requisites'}}
+    </div>
+  </div>
+  {{#if isShowCompetencyInfo}}
+    {{learning-map.competency-info competencyInfo=prerequisitesCompetencyInfo onCloseInfoPopup="onCloseInfoPopup" onSelectPrerequisites="onSelectPrerequisites"}}
+  {{/if}}
+  <div class="table-structure">
+    <table class="table competency-data">
+      <tbody class="tbody">
+        {{#each tableBody as |tableRow|}}
+          <tr class="{{tableRow.competencyLevel}} {{unless isShowMicroCompetency 'hide-row'}}">
+            <td class="competency-info">
+              <div class="competency-id">
+                {{tableRow.id}}
+              </div>
+              <div class="competency-title">
+                {{truncate text=tableRow.title maxLength=110}}
+              </div>
+            </td>
+            {{#each tableRow.contentCounts as |content|}}
+              <td class="content-info {{content.type}}" {{action "onSelectContentType" tableRow.id content.type}}>
+                {{content.count}}
+              </td>
+            {{/each}}
+            <td class="prerequisites-info">
+              {{#each tableRow.prerequisites as |prerequisites|}}
+                <div class="prerequisites-id" {{action "onSelectPrerequisites" prerequisites.id}}>
+                  {{prerequisites.id}}
+                </div>
+              {{/each}}
+            </td>
+          </tr>
+        {{else}}
+          <div class="not-available">
+            {{t (if isLoading 'learning-map.fetching-competency' 'learning-map.not-available')}}
+          </div>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</div>

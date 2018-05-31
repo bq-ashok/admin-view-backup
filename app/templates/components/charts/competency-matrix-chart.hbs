@@ -1,0 +1,24 @@
+{{#if isLoading}}
+  {{three-bounce-spinner}}
+{{/if}}
+<div class="competency-chart-tab-container">
+  <div class="competency-courses-chart">
+    {{#if (not isCompetenciesNull)}}
+      <div class="courses pull-left">
+        <ul>
+          {{#each taxonomyCourses as |taxonomyCourse|}}
+            <li class="course">
+              {{taxonomyCourse.courseName}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{else}}
+      <span class="no-data">No Data Found</span>
+    {{/if}}
+    <div class="pull-left matrix-chart-container {{if (not isCompetenciesNull) 'scroll-view'}}">
+      <div id="competency-matrix-chart"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,40 @@
+.century-skills-legend {
+  border-bottom: 1px solid $light-300;
+  padding-bottom: 12px;
+  ul {
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    li {
+      span.circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        display: inline-block;
+        margin: 0 2px 0 0;
+        &.hewlett {
+          background-color: $gru-century-skills-legend-hewlett;
+        }
+        &.conley {
+          background-color: $gru-century-skills-legend-conley;
+        }
+        &.framework {
+          background-color: $gru-century-skills-legend-framework;
+        }
+        &.national {
+          background-color: $gru-century-skills-legend-national;
+        }
+      }
+    }
+    li.legend {
+      list-style: none;
+      border-right: 2px solid $light-200;
+      margin-right: 15px;
+      padding-right: 15px;
+      float: left;
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<div class="activity-assessments">
+  {{#if isLoading}}
+    {{three-bounce-spinner}}
+  {{else}}
+    {{#if assessments}}
+      <div class="loading-spinner">
+        {{#if isLoadingPullout}}
+          {{three-bounce-spinner}}
+        {{/if}}
+      </div>
+      <div class="assessment-cards">
+        {{#each assessments as |assessment|}}
+          {{activity.assessment-card assessment=assessment onShowPullOut="onShowPullOut"}}
+        {{/each}}
+      </div>
+      {{#if isShowMoreVisible}}
+        <div class="col-xs-12 show-more">
+          <span class="show-more-results" {{action 'showMoreResults'}}>{{t "common.show-more-results"}}</span>
+        </div>
+      {{/if}}
+    {{else}}
+      {{no-result-found}}
+    {{/if}}
+    {{#app-pull-out showPullOut=showPullOut title=selectedAssessment.title showMore=true as |section| }}
+      {{#if section.isLessContent}}
+        {{activities.collection-pull-out-body collection=selectedAssessment collectionData=assessmentPullOutData type="assessment"}}
+      {{else if section.isMoreContent}}
+        {{activities.collection-pull-out-more-content  groupData=groupData groupHeader=groupHeader type="collection" description=selectedAssessment.description}}
+      {{/if}}
+    {{/app-pull-out}}
+  {{/if}}
+</div>

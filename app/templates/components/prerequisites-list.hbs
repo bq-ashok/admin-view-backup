@@ -1,0 +1,15 @@
+{{#if prerequisites}}
+<h6 class="prerequisites-title"> {{t 'common.prerequisites' }} </h6>
+  {{#each prerequisites as | prerequest|}}
+    <div class="col-md-12 total">
+      <div class="left-node col-md-4">
+        <div class="standard-tags">
+          <span> {{prerequest.code}} </span>
+        </div>
+      </div>
+      <div class="col-md-8 right-node">
+        <span> {{prerequest.title}} </span>
+      </div>
+    </div>
+  {{/each}}
+{{/if}}

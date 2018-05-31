@@ -1,0 +1,61 @@
+.app-navigation {
+  background-color: $white;
+  .container {
+    width: 750px;
+  }
+  .nav-tabs {
+    &:after {
+      display: none;
+    }
+    > li > a {
+      border: none;
+      box-shadow: none;
+      color: $dark-400;
+      font-size: 15px;
+      font-weight: 300;
+      padding: 10px 40px;
+      outline: none;
+      text-transform: uppercase;
+      &:focus {
+        border-width: 0;
+      }
+
+      &:hover {
+        border-width: 0;
+        border: none;
+        color: $blue-700 !important;
+        background: transparent;
+      }
+
+      &::after {
+        content: "";
+        background: $white;
+        height: 1px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -1px;
+        transition: all 250ms ease 0s;
+        transform: scale(1);
+      }
+    }
+
+    li.active > a {
+      font-weight: bold;
+      border: none;
+      box-shadow: none;
+      color: $blue-700 !important;
+      background: transparent;
+      &::after {
+        transform: scale(1);
+        background: $white;
+      }
+    }
+
+    li:hover > a {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

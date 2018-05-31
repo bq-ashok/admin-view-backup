@@ -1,0 +1,46 @@
+.activities {
+  height: calc(100vh - 63px);
+  width: 1024px;
+  margin: 0 auto;
+
+  .filters {
+    width: 240px;
+  }
+
+  .activities-summary {
+    width: calc(100% - 240px);
+
+    .section {
+      margin: 20px;
+      height: 414px;
+      width: 97.5%;
+      background-color: $white;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);
+      border-radius: 4px;
+      .header {
+        color: $dark-400;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-left: 21px;
+        line-height: 48px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        height: 48px;
+      }
+    }
+
+    .content-distribution-by-subject {
+      height: 700px;
+    }
+
+    .content-distribution-header {
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: bold;
+      border-bottom: 1px dashed #35424b;
+      color: $dark-800;
+      padding-bottom: 5px;
+      margin-left: 40px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.activities-filter-accordion {
+  margin-top: 5px;
+  .filter {
+    padding-left: 12px;
+    margin-bottom: 10px;
+    .header {
+      display: flex;
+      .name {
+        width: 200px;
+        text-transform: capitalize;
+        font-size: 13px;
+        font-weight: bolder;
+        color: $dark-400;
+      }
+      .toggle-dropdown {
+        z-index: 999;
+        cursor: pointer;
+      }
+    }
+    .body {
+      max-height: 180px;
+      width: 220px;
+      overflow: auto;
+      .filter-name {
+        padding: 3px;
+        display: flex;
+        text-transform: capitalize;
+        font-size: 13px;
+        color: $dark-200;
+        .check-filter {
+          &::after {
+            border-radius: 50%;
+            border: 2px solid $light-500;
+          }
+          &::before {
+            background: none;
+            border: none;
+          }
+          &:checked::after {
+            background-color: yellow;
+            background: url(../assets/images/tick-inside-circle-blue.svg)
+              no-repeat center;
+            background-size: contain;
+            border: none;
+            display: block;
+          }
+        }
+      }
+      &.expanded {
+        display: block;
+      }
+      &.collapsed {
+        display: none;
+      }
+    }
+
+    &.deactivated {
+      pointer-events: none;
+      .header {
+        .name,
+        .toggle-dropdown > i {
+          color: $light-500;
+        }
+      }
+    }
+  }
+}

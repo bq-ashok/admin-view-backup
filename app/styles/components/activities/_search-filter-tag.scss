@@ -1,0 +1,24 @@
+.search-box {
+  .search-filter-tag {
+    margin-left: 10px;
+    margin-top: 2px;
+    .tag-label {
+      line-height: 1.2;
+      border-radius: 4px;
+      background-color: $dark-400;
+      color: $white;
+      padding: 1px 5px 1px 2px;
+      font-size: 13px;
+      display: flex;
+      i {
+        font-size: 15px;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    }
+    .empty {
+      max-width: none !important;
+      margin: 15px 0 0 30px;
+    }
+  }
+}

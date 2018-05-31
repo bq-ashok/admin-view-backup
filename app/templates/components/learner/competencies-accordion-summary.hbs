@@ -1,0 +1,28 @@
+<div class="competency" role="tab" id="{{elementId}}-heading">
+
+  <div class="panel-title">
+    <a class="collapsed title" role="button" data-toggle="collapse" href="#{{elementId}}-content" aria-expanded="false" aria-controls="{{elementId}}-content" {{action 'selectCompetency' competency}}>
+      <div class="title ellipsis"> {{competency.title}} </div>
+      <div class="sub-title ellipsis"> {{competency.displayCode}} </div>
+    </a>
+  </div>
+  <div class="panel-info">
+    <span class="status"> {{t (concat 'learner.' competency.status)}}</span>
+    <div class="time">
+      <span class="{{competency.status}}"> <i> </i></span>
+
+    </div>
+  </div>
+</div>
+
+<div id="{{elementId}}-content" data-index="{{componentIndex}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{elementId}}-heading">
+  <ol class="panel-group" role="tablist" aria-multiselectable="true">
+    {{#if isLoading}}
+      {{three-bounce-spinner}}
+    {{else}}
+      {{#each collections as | collection |}}
+        {{learner.competencies-accordion-summary-items collection=collection userId=userId}}
+      {{/each}}
+    {{/if}}
+  </ol>
+</div>

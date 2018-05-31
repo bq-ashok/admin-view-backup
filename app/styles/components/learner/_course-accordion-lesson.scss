@@ -1,0 +1,58 @@
+.course-accordion-lesson {
+  .lesson-content {
+    .lesson-header {
+      padding-bottom: 15px;
+      border-bottom: 1px solid $dark-50;
+      margin-top: 15px;
+      display: flex;
+      .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: $dark-800;
+        text-transform: uppercase;
+        width: 60%;
+        .title-text {
+          cursor: pointer;
+        }
+      }
+      .lesson-icon {
+        margin-right: 20px;
+        i {
+          background: url("images/lesson-icon.svg");
+          width: 21px;
+          height: 17px;
+          background-size: 21px 17px;
+          object-fit: contain;
+          display: block;
+          margin-top: 7px;
+        }
+      }
+      .lesson-status {
+        width: calc(100% - 60%);
+        display: flex;
+        .score {
+          width: 96%;
+        }
+        .status, .time {
+          width: 50%;
+          text-align: center;
+          font-weight: bold;
+        }
+        .time {
+          font-size: 15px;
+          font-weight: bold;
+          color: $dark-800;
+        }
+      }
+    }
+    .collections {
+      margin-left: 15px;
+    }
+  }
+  &.expanded .lesson-body {
+    display: block;
+  }
+  &.collapsed .lesson-body {
+    display: none;
+  }
+}

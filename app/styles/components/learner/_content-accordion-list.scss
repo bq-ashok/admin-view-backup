@@ -1,0 +1,138 @@
+.content-accordion-list {
+  height: auto;
+  background: white;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 960px;
+  overflow: hidden;
+  .accordion {
+    %title-styles {
+      font-size: 15px;
+      color: $dark-800;
+      text-transform: uppercase;
+    }
+    .accordion-header {
+      padding: 0 0 15px 0;
+      border-bottom: 1px solid $dark-50;
+      display: flex;
+
+      .title {
+        width: 90%;
+        display: flex;
+        .pull-down {
+          display: flex;
+          cursor: pointer;
+        }
+        .title-text {
+          @extend %title-styles;
+          font-weight: bold;
+        }
+      }
+      .statistics {
+        width: 10%;
+        display: flex;
+        .time {
+          @extend %title-styles;
+          font-weight: bold;
+          text-transform: lowercase;
+        }
+      }
+    }
+    .accordion-body {
+      .accordion-list {
+        margin-left: 20px;
+        .list-item {
+          display: flex;
+          font-size: 15px;
+          color: $dark-400;
+          height: 42px;
+          line-height: 42px;
+          margin-left: 30px;
+          border-bottom: solid 1px $light-200;
+          span {
+            margin-left: -12px;
+          }
+          .title {
+            width: 86%;
+          }
+          .statistics {
+            width: 10%;
+            .time {
+              @extend %title-styles;
+              text-transform: lowercase;
+            }
+          }
+          %content-icon-size {
+            -webkit-background-size: 20px 20px;
+            background-size: 20px 20px !important;
+            height: 20px;
+            width: 20px;
+            display: block;
+            margin: 12px 24px 0 0;
+          }
+          .video {
+            i{
+              background: url("../assets/images/video-resource-dark.svg");
+              @extend %content-icon-size;
+            }
+            &.suggested i{
+              background: url("../assets/images/video-resource-orange.svg");
+            }
+          }
+          .webpage {
+            i {
+              background: url("../assets/images/website-resource-dark.svg");
+              @extend %content-icon-size;
+            }
+            &.suggested i{
+              background: url("../assets/images/webpage-resource-orange.svg");
+            }
+          }
+
+          }
+          .interactive {
+            i {
+              background: url("../assets/images/interactive-resource-dark.svg");
+              @extend %content-icon-size;
+            }
+            &.suggested i{
+              background: url("../assets/images/interactive-resource-orange.svg");
+            }
+          }
+          .text {
+            i {
+              background: url("../assets/images/text-resource-dark.svg");
+              @extend %content-icon-size;
+            }
+            &.suggested i{
+              background: url("../assets/images/text-resource-orange.svg");
+            }
+          }
+          .audio {
+            i {
+              background: url("../assets/images/audio-resource-dark.svg");
+              @extend %content-icon-size;
+            }
+            &.suggested i{
+              background: url("../assets/images/audio-resource-orange.svg");
+            }
+          }
+          .image {
+            i {
+              background: url("../assets/images/image-resource-dark.svg");
+              @extend %content-icon-size;
+            }
+            &.suggested i{
+              background: url("../assets/images/image-resource-orange.svg");
+            }
+          }
+        }
+      }
+  }
+  &.expanded .accordion-body {
+    display: block;
+  }
+  &.collapsed .accordion-body {
+    display: none;
+  }
+}

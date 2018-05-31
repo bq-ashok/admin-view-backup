@@ -1,0 +1,29 @@
+.activity {
+  height: calc(100vh - 63px);
+  overflow-y: auto;
+
+  .wrapper {
+    width: 1024px;
+    margin: 0 auto;
+
+    .filters {
+      width: 240px;
+    }
+
+    .activity-container {
+      width: calc(100% - 240px);
+      padding-left: 40px;
+      margin-top: 15px;
+      .content-container {
+        > div {
+          margin: 22px -15px;
+        }
+      }
+    }
+  }
+  .loading-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}

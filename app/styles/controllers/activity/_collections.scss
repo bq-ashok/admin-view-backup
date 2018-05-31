@@ -1,0 +1,27 @@
+.activity-collections {
+  margin: 50px auto;
+
+  .collection-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 45px;
+    align-items: center;
+  }
+
+  .app-pull-out {
+    top: 63px;
+    height: calc(100vh - 63px);
+    .pull-out-more-content-container {
+      display: table;
+    }
+  }
+
+  .activity-collection-card {
+    width: 220px;
+    height: 384px;
+  }
+
+  .show-more {
+    margin-top: 30px;
+  }
+}

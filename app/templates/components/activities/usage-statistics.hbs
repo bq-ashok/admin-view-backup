@@ -1,0 +1,12 @@
+<div class="section-title">
+  {{t 'common.usageStatistics'}}
+</div>
+{{#each usage as |subject|}}
+  <div class="active-districts">
+    <div class="districs">
+      <span class="num-of-count">{{count-format subject.total}}</span>
+      <span class="usage-total-count">{{subject.name}}</span>
+    </div>
+  </div>
+{{/each}}
+<div class="clear"></div>

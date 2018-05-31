@@ -1,0 +1,107 @@
+.app-crosswalk-table {
+  .crosswalk-subject {
+    display: block;
+    background: url("images/crosswalk-subject.png");
+    width: 95%;
+    margin: auto;
+    height: 59px;
+    background-size: contain;
+    object-fit: cover;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    line-height: 59px;
+    display: flex;
+    span {
+      cursor: pointer;
+    }
+    .subject-info {
+      width: 70%;
+    }
+    .toggle-competency {
+      font-size: 13px;
+      font-weight: bold;
+      display: flex;
+      margin-left: 25px;
+      .switch {
+        position: relative;
+        width: 40px;
+        height: 15px;
+        margin-top: 22px;
+        margin-right: 10px;
+        input {
+          display: none;
+        }
+      }
+    }
+  }
+  height: 100vh;
+  padding-bottom: 30px;
+  .thead {
+    display: flex;
+    width: 94%;
+    height: 44px;
+    line-height: 44px;
+    color: $dark-400;
+    font-weight: bold;
+    margin: auto;
+    border-bottom: 2px solid #979797;
+    .td {
+      padding-left: 15px;
+      i {
+        float: right;
+        line-height: 2.2;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  .table-structure {
+    height: 80vh;
+    overflow: auto;
+    table.crosswalk-data {
+      width: 95%;
+      margin: auto;
+
+      td {
+        padding-left: 19px;
+      }
+      tbody {
+        tr {
+          &.micro-competency {
+            td {
+              padding-left: 30px;
+            }
+          }
+          td {
+            height: 52px;
+            border-left: solid 1px $light-200;
+            border-right: solid 1px $light-200;
+            font-size: 12px;
+            color: $dark-400;
+            &:hover {
+              background-color: $light-100;
+            }
+            .id {
+              font-weight: bold;
+            }
+          }
+          td:first-child {
+            border-left: none;
+            max-width: 250px;
+            line-height: 1.8;
+            background-color: $light-100;
+          }
+          td:last-child {
+            border-right: none;
+          }
+          &.hide-row {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

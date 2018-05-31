@@ -1,0 +1,42 @@
+<div class="table-responsive">
+  <div class="crosswalk-subject">
+    <div class="toggle-competency">
+      {{app-toggle-button onToggleButton="onToggleMicroCompetency"}}
+      <span>{{t 'crosswalk.micro-competency'}}</span>
+    </div>
+    <div class="subject-info">
+      {{t (concat 'common.categoryOptions.' categoryId)}} > {{subjectTitle}}
+      <span {{action "scrollTop"}}><i class="material-icons">arrow_upward</i></span>
+    </div>
+
+  </div>
+
+  {{#if isShowTableSearch}}
+    {{crosswalk.crosswalk-table-search onBackToCrosswalk="onBackToCrosswalk" crosswalkCodes=crosswakCodeByFrameworkId selectedFramework=selectedFramework}}
+  {{/if}}
+
+  <div class="thead">
+    {{#each tableData.header as |header headerIndex|}}
+      <div class="td">
+        {{header}}
+        <span {{action "onClickSearchIcon" header headerIndex}}>{{app-icon name="search"}}</span>
+      </div>
+    {{/each}}
+  </div>
+  <div class="table-structure">
+    <table class="table crosswalk-data" id="crosswalk-data">
+      <tbody>
+        {{#each tableData.body as |tableRow|}}
+          <tr class="{{tableRow.competencyType}}">
+            {{#each tableRow as |tableBody|}}
+              <td>
+                <div class="id">{{tableBody.id}}</div>
+                <div class="title">{{tableBody.title}}</div>
+              </td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

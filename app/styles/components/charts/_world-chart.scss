@@ -1,0 +1,26 @@
+.world-map-chart {
+  width: inherit;
+  height: inherit;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #states path {
+    fill: #C0C3C2;
+    stroke: #C0C3C2;
+  }
+
+  circle {
+    fill: #1aa9eb;
+    fill-opacity: 0.3;
+  }
+
+  #labels {
+    text {
+      fill: #f3f5f4;
+      font-weight: bold;
+    }
+  }
+}

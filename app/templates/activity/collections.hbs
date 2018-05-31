@@ -1,0 +1,32 @@
+<div class="activity-collections">
+  {{#if isLoading}}
+    {{three-bounce-spinner}}
+  {{else}}
+    {{#if collections}}
+      <div class="loading-spinner">
+        {{#if isLoadingPullout}}
+          {{three-bounce-spinner}}
+        {{/if}}
+      </div>
+      <div class="collection-cards">
+        {{#each collections as |collection|}}
+          {{activity.collection-card collection=collection onShowPullOut="onShowPullOut"}}
+        {{/each}}
+      </div>
+      {{#if isShowMoreVisible}}
+        <div class="col-xs-12 show-more">
+          <span class="show-more-results" {{action 'showMoreResults'}}>{{t "common.show-more-results"}}</span>
+        </div>
+      {{/if}}
+    {{else}}
+      {{no-result-found}}
+    {{/if}}
+    {{#app-pull-out showPullOut=showPullOut title=selectedCollection.title showMore=true as |section| }}
+      {{#if section.isLessContent}}
+        {{activities.collection-pull-out-body collection=selectedCollection collectionData=collectionPullOutData}}
+      {{else if section.isMoreContent}}
+        {{activities.collection-pull-out-more-content  groupData=groupData groupHeader=groupHeader type="collection" description=selectedCollection.description}}
+      {{/if}}
+    {{/app-pull-out}}
+  {{/if}}
+</div>

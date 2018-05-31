@@ -1,0 +1,6 @@
+ {
+  "endpoint" : {
+    "url": "http://gooru.org",
+    "secureUrl": "https://gooru.org"
+  }
+}

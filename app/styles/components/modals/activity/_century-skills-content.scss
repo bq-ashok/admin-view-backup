@@ -1,0 +1,104 @@
+.modal-dialog {
+  width: 940px;
+  .modals.century-skills {
+    border-radius: 4px;
+    .modal-header {
+      height: 30px;
+      background-color: $blue-400;
+      .modal-title {
+        float: left;
+        color: $white;
+      }
+    }
+    .modal-body {
+      height: 690px;
+      border-bottom-right-radius: 10px;
+      .century-skills-content {
+        margin: 20px 0 0 0;
+        .content {
+          height: 530px;
+          .column {
+            float: left;
+            width: 290px;
+            height: 530px;
+            border-radius: 3px;
+            border: 1px solid $light-300;
+            .header {
+              height: 40px;
+              padding: 9px 0 0 0;
+              border-bottom: 1px solid $light-300;
+              background-color: $gru-century-skills-column-header;
+              text-align: center;
+            }
+            .skills {
+              padding: 15px 10px;
+              height: 488px;
+              overflow-y: auto;
+              overflow-x: hidden;
+              li {
+                span.circle {
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 100%;
+                  display: inline-block;
+                  margin: 0 2px 0 0;
+                  &.hewlett {
+                    background-color: $gru-century-skills-legend-hewlett;
+                  }
+                  &.conley {
+                    background-color: $gru-century-skills-legend-conley;
+                  }
+                  &.framework {
+                    background-color: $gru-century-skills-legend-framework;
+                  }
+                  &.national {
+                    background-color: $gru-century-skills-legend-national;
+                  }
+                }
+              }
+              li {
+                cursor: pointer;
+                list-style: none;
+                width: 270px;
+                margin: 0 0 10px 0;
+                line-height: $font-size-h6;
+                @include flexbox;
+                .categories {
+                  width: 55px;
+                  text-align: right;
+                  padding: 5px;
+                  span.circle {
+                    margin: 0 -1px;
+                  }
+                }
+                .title {
+                  width: 205px;
+                  float: left;
+                  padding: 5px;
+                  border: 1px solid $white;
+                  &.selected {
+                    border-color: $gru-century-skills-item-selected;
+                    border-radius: 3px;
+                    background-color: $gru-century-skills-item-selected;
+                    color: $white;
+                  }
+                }
+              }
+            }
+            &.between {
+              margin: 0 15px;
+            }
+          }
+        }
+        .actions {
+          float: right;
+          .cancel {
+            border: 1px solid;
+          }
+          clear: both;
+          margin: 30px 0 10px 0 !important;
+        }
+      }
+    }
+  }
+}

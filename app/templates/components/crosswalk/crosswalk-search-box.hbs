@@ -1,0 +1,9 @@
+<div class="input-box">
+  <span class="back-icon" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Back To Crosswalk" {{action "onBackToCrosswalk"}}>
+    {{app-icon name="keyboard_backspace"}}
+  </span>
+  {{input type="input" class="form-control search-input" key-up="onSearchCrosswalk" value=search placeholder=(concat 'Search for anything within ' selectedFramework '...')}}
+  <span class="search-icon">
+    {{app-icon name="search"}}
+  </span>
+</div>

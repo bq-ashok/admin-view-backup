@@ -1,0 +1,12 @@
+.suggest {
+  height: calc(100vh - 63px);
+  display: table;
+  width: 100%;
+  h3 {
+    color: $gray;
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+    display: table-cell;
+  }
+}

@@ -1,0 +1,90 @@
+{{#if isLoading}}
+  {{three-bounce-spinner}}
+{{/if}}
+<div class="course-domain-matrix-chart-container">
+  <div class="course-domain-matrix">
+    <div class="courses pull-left">
+      <ul>
+        {{#each taxonomyCourses as |taxonomyCourse index |}}
+          <li>
+            <span class="course-name">
+            {{taxonomyCourse.courseName}}
+            </span>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="pull-left matrix-chart-container {{if isTaxonomyCourses 'scroll-view' ''}}" style="width: {{if isScroll '47%' 'auto' }}">
+      <div id="course-domain-matrix-chart"></div>
+      <div class="domain-numbers" style="width:{{width}}px">
+        <div class="domain-list">
+          {{#each taxonomyDomains as |taxonomyDomain index |}}
+            <li class="domain-counts">
+              {{taxonomyDomain.domainSeq}}
+            </li>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+
+    {{#if isDomainViewEnabled}}
+      <div class="domain-info-container" style=" max-height : {{competencypanelHeight}}px">
+        <div class="domain-detail-box">
+          <div class="back-to-matrix-view" {{action 'backToCourseView'}}>
+            {{app-icon name="ic_arrow_back"}}
+          </div>
+          <div class="course-domain-info">
+            <div class="course-name">{{selectedDomainData.courseName}}</div>
+            <div class="domain-name">{{selectedDomainData.domainName}}</div>
+          </div>
+        </div>
+        {{#each taxonomyDomainCompetencies as |taxonomyDomainCompetency index|}}
+          <div class="domain-competency-info-container domain-competency-info-container-{{index}} {{if (or (not taxonomyDomainCompetency.microCompetencies) (eq index 0) ) 'micro-competency-enabled'}}">
+            <div class="competency-info">
+              <div class="competency-info-icon" {{action 'domainCompetencyPullOut' taxonomyDomainCompetency 'competencies'}}>
+                {{app-icon name="ic_info_outline" class="more-info"}}
+                <div class="competency-info-tile">
+                  {{#each taxonomyDomainCompetency.microCompetencies as |microCompetency index|}}
+                    <i class="competency-info-tile-icon" />
+                  {{/each}}
+                </div>
+              </div>
+              <div class="competency-name" {{action 'showMicroCompetency' taxonomyDomainCompetency index}}>
+                <p>{{taxonomyDomainCompetency.title}}</p>
+              </div>
+            </div>
+            <div class="micro-competency-container">
+              {{#each taxonomyDomainCompetency.microCompetencies as |microCompetency index|}}
+                <div class="micro-competency-info">
+                  <div class="micro-competency-info-icon">
+                    <i></i>
+                  </div>
+                  <div class="micro-competency-name" {{action 'domainCompetencyPullOut' microCompetency 'microCompetency'}}>
+                    <p>{{microCompetency.title}}</p>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+            <div class="clear"></div>
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <div class="domains pull-left" style=" max-height : {{competencypanelHeight}}px">
+        <ul>
+          {{#each taxonomyDomains as |taxonomyDomain index |}}
+            <li>
+              <span class="domain-name">
+              {{taxonomyDomain.domainSeq}} : {{taxonomyDomain.domainName}}
+              </span>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+
+  </div>
+  <div class="clear"></div>
+</div>

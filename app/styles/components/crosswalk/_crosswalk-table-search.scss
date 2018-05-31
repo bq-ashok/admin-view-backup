@@ -1,0 +1,94 @@
+.crosswalk-table-search {
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+  margin: auto;
+  background: $white;
+  top: 51px;
+  .body {
+    height: calc(100vh - 152px);
+    overflow-y: auto;
+    .body-container {
+      margin: 20px 30px;
+      .crowalk-result {
+        display: flex;
+        .crosswalk-card {
+          background-color: $wgb;
+          width: calc(100% / 3);
+          height: 120px;
+          border-right: 1px solid $light-300;
+          padding: 15px 20px 15px 25px;
+          color: $dark-100;
+          font-size: 12px;
+          cursor: pointer;
+          &:last-child {
+            border: none;
+          }
+          .code {
+            font-weight: bold;
+          }
+          .description {
+          }
+          &.active {
+            background-color: $white;
+            color: $dark-400;
+            border: none;
+          }
+          &.unavailable {
+            font-size: 15px;
+            margin: auto;
+            text-align: center;
+            padding-top: 40px;
+          }
+        }
+      }
+
+      .crosswalk-info {
+        display: flex;
+        margin-top: 15px;
+
+        .standard-info {
+          float: left;
+          width: calc(100% / 3);
+          .title {
+            font-size: 15px;
+            font-weight: bold;
+            color: $gray-29;
+            text-transform: uppercase;
+            border-bottom: dashed 2px $dark-600;
+            padding: 8px 0;
+          }
+          .gut-code,
+          .description {
+            font-size: 15px;
+            color: $dark-400;
+            line-height: 1.5;
+            padding-top: 8px;
+          }
+          .gut-code {
+            font-weight: bold;
+          }
+          .content-count,
+          .signature-assessments,
+          .signature-collections,
+          .prerequisites {
+            padding: 15px 0;
+          }
+        }
+        .content-info {
+          .section-content {
+            .section-title {
+              padding: 8px 0;
+              margin: 0px 24px 15px 15px;
+              font-size: 15px;
+              font-weight: bold;
+              color: $gray-29;
+              text-transform: uppercase;
+              border-bottom: dashed 2px $dark-600;
+            }
+          }
+        }
+      }
+    }
+  }
+}

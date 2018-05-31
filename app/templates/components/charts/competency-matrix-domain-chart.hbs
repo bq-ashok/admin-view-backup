@@ -1,0 +1,31 @@
+{{#if isLoading}}
+  {{three-bounce-spinner}}
+{{/if}}
+<div class="competency-chart-tab-container">
+  <div class="competency-courses-chart">
+    <div class="courses pull-left">
+      <ul>
+        {{#each taxonomyDomains as |taxonomyDomain index |}}
+          <li>
+            {{taxonomyDomain.domainSeq}}. {{taxonomyDomain.domainName}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="pull-left matrix-chart-container {{if isTaxonomyDomains 'scroll-view' ''}}">
+      <div id="competency-matrix-domain-chart"></div>
+      <div class="domain-list" style="width:{{width}}px">
+        {{#each taxonomyDomains as |taxonomyDomain index |}}
+          <li class="domain-counts">
+            {{taxonomyDomain.domainSeq}}
+          </li>
+        {{/each}}
+      </div>
+    </div>
+
+    {{#if (and (not isLoading) (not isTaxonomyDomains) ) }}
+      <span class="no-data">No Data Found</span>
+    {{/if}}
+  </div>
+  <div class="clear"></div>
+</div>

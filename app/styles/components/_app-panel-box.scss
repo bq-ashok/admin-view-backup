@@ -1,0 +1,24 @@
+.app-panel-box {
+  width: inherit;
+  height: inherit;
+  border-radius: 4px;
+  background-color: $white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px 20px 20px 30px;
+
+  .panel-back-arrow {
+    width: 40px;
+    cursor: pointer;
+    i {
+      margin-left: -74px;
+      margin-top: 7px;
+    }
+  }
+
+  .panel-title {
+    span {
+      font-size: 15px;
+      color: $dark-800;
+    }
+  }
+}
